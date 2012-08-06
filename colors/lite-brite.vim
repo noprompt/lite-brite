@@ -1,5 +1,6 @@
 " Title: Lite Brite
 " Author: Joel Holdbrooks <cjholdbrooks@gmail.com>
+" URI: https://github.com/noprompt/lite-brite
 
 set background=dark
 hi clear
