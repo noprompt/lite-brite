@@ -258,3 +258,13 @@ hi link sassClassChar sassClass
 " Haskell
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi link hsCharacter String
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PHP
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+exe "hi phpIdentifier" . s:WHITE . s:NO_FORMAT
+exe "hi phpVarSelector" . s:WHITE . s:NO_FORMAT
+exe "hi phpRepeat" . s:RED . s:NO_FORMAT
+hi link phpDefine Function
+exe "hi phpOperator" . s:WHITE . s:NO_FORMAT 
+hi link phpRelation phpOperator
