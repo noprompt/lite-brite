@@ -268,3 +268,12 @@ exe "hi phpRepeat" . s:RED . s:NO_FORMAT
 hi link phpDefine Function
 exe "hi phpOperator" . s:WHITE . s:NO_FORMAT 
 hi link phpRelation phpOperator
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Standard ML
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+exe "hi smlKeyChar" . s:WHITE . s:NO_FORMAT
+" SML in all red is too much to handle
+exe "hi smlKeyWord" . s:BLUE  . s:NO_FORMAT
+hi link smlEncl smlKeyChar
+exe "hi smlModPath" . s:WHITE . s:BOLD
