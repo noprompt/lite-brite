@@ -26,6 +26,7 @@ let s:PURPLE  = " ctermfg=183  guifg=#e7b2ff"
 let s:RED     = " ctermfg=210  guifg=#ff87af"
 let s:WHITE   = " ctermfg=15   guifg=#ffffff"
 let s:YELLOW  = " ctermfg=226  guifg=#ffff00"
+let s:TEAL    = " ctermfg=14   guifg=#00ffff"
 let s:GREY1   = " ctermfg=233  guifg=#121212"
 let s:GREY2   = " ctermfg=234  guifg=#1c1c1c"
 let s:GREY3   = " ctermfg=235  guifg=#262626"
@@ -50,7 +51,7 @@ let s:BOLD_ITALIC_UNDERLINE = " cterm=bold,underline gui=bold,italic,underline"
 let s:ITALIC_UNDERLINE      = " cterm=underline gui=italic,underline"
 let s:NO_FORMAT             = " cterm=NONE gui=NONE"
 
-exe "hi Boolean"   . s:ORANGE    . s:NO_FORMAT 
+exe "hi Boolean"   . s:ORANGE    . s:NO_FORMAT
 exe "hi Character" . s:WHITE     . s:NO_FORMAT
 exe "hi Comment"   . s:GREY6     . s:ITALIC
 exe "hi Constant"  . s:WHITE     . s:BOLD
@@ -60,7 +61,7 @@ exe "hi Keyword"   . s:RED       . s:NO_FORMAT
 exe "hi Number"    . s:GREEN     . s:NO_FORMAT
 exe "hi Special"   . s:RED       . s:NO_FORMAT
 exe "hi Statement" . s:BLUE      . s:NO_FORMAT
-exe "hi String"    . s:PURPLE    . s:NO_FORMAT
+exe "hi String"    . s:TEAL      . s:NO_FORMAT
 exe "hi Todo"      . s:NO_BG     . s:GREY13
 exe "hi Type"      . s:BLUE      . s:NO_FORMAT
 hi ColorColumn ctermbg=233 guibg=#121212
@@ -76,13 +77,15 @@ hi PmenuSel ctermbg=234 ctermfg=215
 hi PreProc ctermfg=102 gui=NONE guifg=#7d7d7d
 hi StatusLine ctermbg=240 ctermfg=234 guibg=#585858 guifg=#1c1c1c
 hi StatusLineNC ctermbg=236 ctermfg=232 guibg=#303030 guifg=#080808
+" Underline search results.
+hi Search cterm=underline ctermbg=NONE ctermfg=NONE gui=underline guibg=NONE guifg=NONE
 hi Tabline ctermfg=242 ctermbg=235 cterm=none
 hi TablineFill ctermfg=233
 hi TablineSel ctermfg=248 ctermbg=236
 hi VertSplit ctermbg=240 ctermfg=233 guibg=#585858 guifg=#121212
 hi Visual ctermbg=233 ctermfg=222 guibg=#121212 guifg=#ffd787
-hi link Float Number 
-hi link Identifier Normal 
+hi link Float Number
+hi link Identifier Normal
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Viml
@@ -92,41 +95,43 @@ exe "hi vimGroup" . s:WHITE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " netrw
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-exe "hi netrwDir "      . s:PURPLE . s:NO_FORMAT 
-exe "hi netrwClassify " . s:PURPLE . s:NO_FORMAT 
-exe "hi netrwHelpCmd "  . s:PURPLE . s:NO_FORMAT 
+exe "hi netrwDir "      . s:PURPLE . s:NO_FORMAT
+exe "hi netrwClassify " . s:PURPLE . s:NO_FORMAT
+exe "hi netrwHelpCmd "  . s:PURPLE . s:NO_FORMAT
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ruby
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
-exe "hi rubyBlockParameter"   . s:GREEN   . s:NO_FORMAT
-exe "hi rubyClassVariable"    . s:ORANGE  . s:BOLD
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+exe "hi rubyBlockParameter"   . s:ORANGE  . s:NO_FORMAT
+exe "hi rubyClassVariable"    . s:GREEN
 exe "hi rubyDataDirective"    . s:YELLOW  . s:BOLD
-exe "hi rubyInstanceVariable" . s:ORANGE  . s:BOLD
-exe "hi rubyPseudoVariable"   . s:YELLOW  . s:BOLD
+exe "hi rubyInstanceVariable" . s:GREEN
+exe "hi rubyPseudoVariable"   . s:WHITE   . s:BOLD
 exe "hi rubyRegexp"           . s:GREEN   . s:NO_FORMAT
 exe "hi rubySymbol"           . s:FUCHSIA . s:NO_FORMAT
 hi link rubyAttribute Keyword
-hi link rubyClass Keyword 
+hi link rubyClass Keyword
 hi link rubyClassDeclaration Constant
 hi link rubyConditional Keyword
-hi link rubyConstant Constant 
-hi link rubyControl Keyword 
+hi link rubyConstant Constant
+hi link rubyControl Keyword
 hi link rubyData Comment
 hi link rubyDefine Keyword
-hi link rubyFunction Function 
-hi link rubyGlobalVariable Constant 
-hi link rubyInclude Keyword 
+hi link rubyFunction Function
+hi link rubyGlobalVariable Constant
+hi link rubyInclude Keyword
 hi link rubyInterpolationDelimiter Comment
-hi link rubyPredefinedVariable Constant 
+hi link rubyModuleDeclaration Constant
+hi link rubyRailsUserClass Constant
+hi link rubyPredefinedVariable Constant
 hi link rubyRegexpDelimiter rubyRegexp
-hi link rubySharpBang Comment 
+hi link rubySharpBang Comment
 hi link rubyStringDelimiter String
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " HTML
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-exe "hi htmlArg"                  . s:GREEN                 . s:NO_FORMAT
+exe "hi htmlArg"                  . s:FUCHSIA                . s:NO_FORMAT
 exe "hi htmlBold"                 . s:BOLD
 exe "hi htmlBoldItalic"           . s:BOLD_ITALIC
 exe "hi htmlBoldItalicUnderline " . s:BOLD_ITALIC_UNDERLINE
@@ -137,6 +142,7 @@ exe "hi htmlItalicUnderline"      . s:ITALIC_UNDERLINE
 exe "hi htmlTag"                  . s:BLUE                  . s:NO_FORMAT
 exe "hi htmlTitle"                . s:BOLD
 exe "hi htmlUnderline"            . s:UNDERLINE
+exe "hi htmlSpecialChar"          . s:ORANGE . s:BOLD
 hi  link  htmlBoldUnderlineItalic  htmlBoldItalicUnderline
 hi  link  htmlH1                   htmlH
 hi  link  htmlH2                   htmlH
@@ -157,7 +163,7 @@ hi  link  htmlUnderlineItalicBold  htmlBoldUnderlineItalic
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " C/C++
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 exe "hi cCharacter "  . s:PURPLE  . s:NO_FORMAT
 exe "hi cIncluded "   . s:PURPLE  . s:NO_FORMAT
 exe "hi cppAccess"    . s:FUCHSIA . s:NO_FORMAT
@@ -166,8 +172,8 @@ exe "hi cUserLabel"   . s:FUCHSIA . s:NO_FORMAT
 exe "hi cStructure"   . s:BLUE    . s:NO_FORMAT
 exe "hi cppStructure" . s:RED     . s:NO_FORMAT
 hi link cStorageClass cType
-hi link cDefine Comment 
-hi link cInclude Comment 
+hi link cDefine Comment
+hi link cInclude Comment
 hi link cppType cType
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -177,9 +183,9 @@ exe "hi cssAuralAttr"       . s:WHITE   . s:NO_FORMAT
 exe "hi cssBoxAttr"         . s:WHITE   . s:NO_FORMAT
 exe "hi cssClassName"       . s:WHITE   . s:NO_FORMAT
 exe "hi cssCommonAttr"      . s:WHITE   . s:NO_FORMAT
-exe "hi cssDefinition"      . s:YELLOW  . s:NO_FORMAT
+exe "hi cssDefinition"      . s:FUCHSIA . s:NO_FORMAT
 exe "hi cssIdentifier"      . s:WHITE   . s:BOLD
-exe "hi cssImportant"       . s:FUCHSIA . s:BOLD
+exe "hi cssImportant"       . s:RED     . s:BOLD
 exe "hi cssInclude"         . s:GREEN   . s:NO_FORMAT
 exe "hi cssMedia"           . s:GREEN   . s:NO_FORMAT
 exe "hi cssMediaType"       . s:RED     . s:NO_FORMAT
@@ -191,7 +197,7 @@ exe "hi cssRenderAttr"      . s:WHITE   . s:NO_FORMAT
 exe "hi cssTableAttr"       . s:WHITE   . s:NO_FORMAT
 exe "hi cssTextAttr"        . s:WHITE   . s:NO_FORMAT
 exe "hi cssUIAttr"          . s:WHITE   . s:NO_FORMAT
-exe "hi cssValue"           . s:GREEN
+exe "hi cssValue"           . s:GREEN   . s:NO_FORMAT
 hi link cssAttributeSelector     String
 hi link cssAuralProp             cssDefinition
 hi link cssBoxProp               cssDefinition
@@ -250,7 +256,9 @@ exe "hi coffeeExtendedOp"   . s:WHITE  . s:NO_FORMAT
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sass
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-exe "hi sassVariable" . s:YELLOW . s:NO_FORMAT
+exe "hi sassVariable" . s:ORANGE . s:NO_FORMAT
+hi link sassId        cssIdentifier
+hi link sassClass     cssClassName
 hi link sassIdChar    sassId
 hi link sassClassChar sassClass
 
@@ -262,18 +270,30 @@ hi link hsCharacter String
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PHP
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-exe "hi phpIdentifier" . s:WHITE . s:NO_FORMAT
+exe "hi phpIdentifier"  . s:WHITE . s:NO_FORMAT
 exe "hi phpVarSelector" . s:WHITE . s:NO_FORMAT
-exe "hi phpRepeat" . s:RED . s:NO_FORMAT
+exe "hi phpRepeat"      . s:RED   . s:NO_FORMAT
+exe "hi phpOperator"    . s:WHITE . s:NO_FORMAT
 hi link phpDefine Function
-exe "hi phpOperator" . s:WHITE . s:NO_FORMAT 
 hi link phpRelation phpOperator
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Standard ML
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-exe "hi smlKeyChar" . s:WHITE . s:NO_FORMAT
+exe "hi smlKeyChar"   . s:WHITE  . s:NO_FORMAT
+exe "hi smlCharacter" . s:PURPLE . s:NO_FORMAT
 " SML in all red is too much to handle
 exe "hi smlKeyWord" . s:BLUE  . s:NO_FORMAT
-hi link smlEncl smlKeyChar
 exe "hi smlModPath" . s:WHITE . s:BOLD
+hi link smlEncl smlKeyChar
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Livescript
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Personally, I don't like to see a bunch of red shit while I'm typing.
+hi lsSpaceError ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
+exe "hi lsIdentifier"       . s:WHITE   . s:NO_FORMAT
+exe "hi lsRegex"            . s:GREEN   . s:NO_FORMAT
+exe "hi lsInfixFunc"        . s:RED     . s:NO_FORMAT
+exe "hi lsProp"             . s:FUCHSIA . s:NO_FORMAT
+exe "hi lsVarInterpolation" . s:WHITE   . s:NO_FORMAT
