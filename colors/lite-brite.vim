@@ -15,31 +15,34 @@ let g:colors_name = "Lite Brite"
 " Color variables
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TODO: Create variables for background colors as well.
-let s:NO_FG   = " ctermfg=NONE guifg=NONE"
-let s:NO_BG   = " ctermbg=NONE guibg=NONE"
-let s:BLUE    = " ctermfg=117  guifg=#87d7ff"
-let s:GREEN   = " ctermfg=120  guifg=#87afd7"
-let s:ORANGE  = " ctermfg=222  guifg=#fccf8a"
-let s:FUCHSIA = " ctermfg=213  guifg=#ff87ff"
-let s:PINK    = " ctermfg=219  guifg=#ffafff"
-let s:PURPLE  = " ctermfg=183  guifg=#e7b2ff"
-let s:RED     = " ctermfg=210  guifg=#ff87af"
-let s:WHITE   = " ctermfg=15   guifg=#ffffff"
-let s:YELLOW  = " ctermfg=226  guifg=#ffff00"
-let s:TEAL    = " ctermfg=14   guifg=#00ffff"
-let s:GREY1   = " ctermfg=233  guifg=#121212"
-let s:GREY2   = " ctermfg=234  guifg=#1c1c1c"
-let s:GREY3   = " ctermfg=235  guifg=#262626"
-let s:GREY4   = " ctermfg=236  guifg=#303030"
-let s:GREY5   = " ctermfg=237  guifg=#3a3a3a"
-let s:GREY6   = " ctermfg=238  guifg=#444444"
-let s:GREY7   = " ctermfg=239  guifg=#4e4e4e"
-let s:GREY8   = " ctermfg=240  guifg=#585858"
-let s:GREY9   = " ctermfg=241  guifg=#626262"
-let s:GREY10  = " ctermfg=242  guifg=#6c6c6c"
-let s:GREY11  = " ctermfg=243  guifg=#767676"
-let s:GREY12  = " ctermfg=244  guifg=#808080"
-let s:GREY13  = " ctermfg=245  guifg=#8a8a8a"
+let s:NO_FG    = " ctermfg=NONE guifg=NONE"
+let s:NO_BG    = " ctermbg=NONE guibg=NONE"
+let s:BLUE     = " ctermfg=117  guifg=#87d7ff"
+let s:GREEN    = " ctermfg=120  guifg=#87afd7"
+let s:ORANGE   = " ctermfg=222  guifg=#fccf8a"
+let s:FUCHSIA  = " ctermfg=213  guifg=#ff87ff"
+let s:PINK     = " ctermfg=219  guifg=#ffafff"
+let s:PURPLE   = " ctermfg=183  guifg=#e7b2ff"
+let s:RED      = " ctermfg=210  guifg=#ff87af"
+let s:WHITE    = " ctermfg=15   guifg=#ffffff"
+let s:YELLOW   = " ctermfg=226  guifg=#ffff00"
+let s:TEAL     = " ctermfg=14   guifg=#00ffff"
+let s:GREY1    = " ctermfg=233  guifg=#121212"
+let s:GREY2    = " ctermfg=234  guifg=#1c1c1c"
+let s:GREY3    = " ctermfg=235  guifg=#262626"
+let s:GREY4    = " ctermfg=236  guifg=#303030"
+let s:GREY5    = " ctermfg=237  guifg=#3a3a3a"
+let s:GREY6    = " ctermfg=238  guifg=#444444"
+let s:GREY7    = " ctermfg=239  guifg=#4e4e4e"
+let s:GREY8    = " ctermfg=240  guifg=#585858"
+let s:GREY9    = " ctermfg=241  guifg=#626262"
+let s:GREY10   = " ctermfg=242  guifg=#6c6c6c"
+let s:GREY11   = " ctermfg=243  guifg=#767676"
+let s:GREY12   = " ctermfg=244  guifg=#808080"
+let s:GREY13   = " ctermfg=245  guifg=#8a8a8a"
+
+let s:GREY1_BG = " ctermbg=233  guibg=#121212"
+let s:GREY2_BG = " ctermbg=234  guibg=#1c1c1c"
 
 " Formatting
 let s:BOLD                  = " cterm=bold gui=bold"
@@ -65,7 +68,7 @@ exe "hi String"    . s:TEAL      . s:NO_FORMAT
 exe "hi Todo"      . s:NO_BG     . s:GREY13
 exe "hi Type"      . s:BLUE      . s:NO_FORMAT
 hi ColorColumn ctermbg=233 guibg=#121212
-hi CursorLine ctermbg=0 guibg=#000000
+exe "hi CursorLine" . s:GREY1_BG . s:NO_FORMAT
 hi Folded ctermfg=240 ctermbg=233 guifg=#585858 guibg=#121212
 hi LineNr ctermbg=233 ctermfg=235 guibg=#121212 guifg=#262626
 hi MatchParen cterm=bold ctermbg=0 ctermfg=15 gui=bold guibg=#1f1f1f guifg=#ededed
@@ -131,15 +134,15 @@ hi link rubyStringDelimiter String
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " HTML
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-exe "hi htmlArg"                  . s:FUCHSIA                . s:NO_FORMAT
+exe "hi htmlArg"                  . s:FUCHSIA . s:NO_FORMAT
 exe "hi htmlBold"                 . s:BOLD
 exe "hi htmlBoldItalic"           . s:BOLD_ITALIC
 exe "hi htmlBoldItalicUnderline " . s:BOLD_ITALIC_UNDERLINE
 exe "hi htmlBoldUnderline"        . s:BOLD_UNDERLINE
-exe "hi htmlH"                    . s:WHITE                 . s:BOLD
+exe "hi htmlH"                    . s:WHITE . s:BOLD
 exe "hi htmlItalic"               . s:ITALIC
 exe "hi htmlItalicUnderline"      . s:ITALIC_UNDERLINE
-exe "hi htmlTag"                  . s:BLUE                  . s:NO_FORMAT
+exe "hi htmlTag"                  . s:BLUE . s:NO_FORMAT
 exe "hi htmlTitle"                . s:BOLD
 exe "hi htmlUnderline"            . s:UNDERLINE
 exe "hi htmlSpecialChar"          . s:ORANGE . s:BOLD
@@ -242,16 +245,17 @@ hi link javascriptNumber   Number
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CoffeeScript
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-exe "hi coffeeSpecialIdent" . s:ORANGE . s:NO_FORMAT
-exe "hi coffeeSpecialVar"   . s:YELLOW . s:NO_FORMAT
-exe "hi coffeeRegex"        . s:GREEN  . s:NO_FORMAT
-exe "hi coffeeObjAssign"    . s:GREEN  . s:NO_FORMAT
-exe "hi coffeeParen"        . s:WHITE  . s:NO_FORMAT
-exe "hi coffeeParens"       . s:WHITE  . s:NO_FORMAT
-exe "hi coffeeBracket"      . s:WHITE  . s:NO_FORMAT
-exe "hi coffeeCurly"        . s:WHITE  . s:NO_FORMAT
-exe "hi coffeeCurlies"      . s:WHITE  . s:NO_FORMAT
-exe "hi coffeeExtendedOp"   . s:WHITE  . s:NO_FORMAT
+exe "hi coffeeSpecialIdent" . s:ORANGE  . s:NO_FORMAT
+exe "hi coffeeSpecialVar"   . s:YELLOW  . s:NO_FORMAT
+exe "hi coffeeSpecialOp"    . s:WHITE   . s:NO_FORMAT
+exe "hi coffeeRegex"        . s:GREEN   . s:NO_FORMAT
+exe "hi coffeeObjAssign"    . s:FUCHSIA . s:NO_FORMAT
+exe "hi coffeeParen"        . s:WHITE   . s:NO_FORMAT
+exe "hi coffeeParens"       . s:WHITE   . s:NO_FORMAT
+exe "hi coffeeBracket"      . s:WHITE   . s:NO_FORMAT
+exe "hi coffeeCurly"        . s:WHITE   . s:NO_FORMAT
+exe "hi coffeeCurlies"      . s:WHITE   . s:NO_FORMAT
+exe "hi coffeeExtendedOp"   . s:WHITE   . s:NO_FORMAT
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sass
