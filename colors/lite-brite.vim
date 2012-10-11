@@ -19,13 +19,13 @@ let s:NO_FG    = " ctermfg=NONE guifg=NONE"
 let s:NO_BG    = " ctermbg=NONE guibg=NONE"
 let s:BLUE     = " ctermfg=117  guifg=#87d7ff"
 let s:GREEN    = " ctermfg=120  guifg=#87afd7"
-let s:ORANGE   = " ctermfg=222  guifg=#fccf8a"
+let s:ORANGE   = " ctermfg=221  guifg=#ffd75f"
 let s:FUCHSIA  = " ctermfg=213  guifg=#ff87ff"
 let s:PINK     = " ctermfg=219  guifg=#ffafff"
 let s:PURPLE   = " ctermfg=183  guifg=#e7b2ff"
 let s:RED      = " ctermfg=210  guifg=#ff87af"
 let s:WHITE    = " ctermfg=15   guifg=#ffffff"
-let s:YELLOW   = " ctermfg=226  guifg=#ffff00"
+let s:YELLOW   = " ctermfg=227  guifg=#ffff5f"
 let s:TEAL     = " ctermfg=14   guifg=#00ffff"
 let s:GREY1    = " ctermfg=233  guifg=#121212"
 let s:GREY2    = " ctermfg=234  guifg=#1c1c1c"
@@ -105,14 +105,16 @@ exe "hi netrwHelpCmd "  . s:PURPLE . s:NO_FORMAT
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ruby
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+exe "hi rubyAccess"           . s:BLUE    . s:NO_FORMAT
 exe "hi rubyBlockParameter"   . s:ORANGE  . s:NO_FORMAT
 exe "hi rubyClassVariable"    . s:GREEN
 exe "hi rubyDataDirective"    . s:YELLOW  . s:BOLD
 exe "hi rubyInstanceVariable" . s:GREEN
-exe "hi rubyPseudoVariable"   . s:WHITE   . s:BOLD
+exe "hi rubyPseudoVariable"   . s:WHITE
 exe "hi rubyRegexp"           . s:GREEN   . s:NO_FORMAT
 exe "hi rubySymbol"           . s:FUCHSIA . s:NO_FORMAT
-hi link rubyAttribute Keyword
+"hi link rubyAttribute Keyword
+exe "hi rubyAttribute" . s:BLUE . s:NO_FORMAT
 hi link rubyClass Keyword
 hi link rubyClassDeclaration Constant
 hi link rubyConditional Keyword
@@ -163,6 +165,26 @@ hi  link  htmlUnderlineBold        htmlBoldUnderline
 hi  link  htmlUnderlineBoldItalic  htmlBoldUnderlineItalic
 hi  link  htmlUnderlineItalic      htmlItalicUnderline
 hi  link  htmlUnderlineItalicBold  htmlBoldUnderlineItalic
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PHP
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+exe "hi phpIdentifier"   . s:WHITE . s:NO_FORMAT
+exe "hi phpVarSelector"  . s:WHITE . s:NO_FORMAT
+exe "hi phpRepeat"       . s:RED   . s:NO_FORMAT
+exe "hi phpOperator"     . s:WHITE . s:NO_FORMAT
+exe "hi phpConditional"  . s:RED   . s:NO_FORMAT
+exe "hi phpStatement"    . s:RED   . s:NO_FORMAT
+exe "hi phpType"         . s:FUCHSIA   . s:NO_FORMAT
+exe "hi phpStorageClass" . s:FUCHSIA   . s:NO_FORMAT
+hi link phpDefine Function
+hi link phpRelation phpOperator
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" XML
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi link xmlAttrib htmlArg
+hi link xmlEndTag htmlTagN
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " C/C++
@@ -229,6 +251,15 @@ hi link cssValueNumber           cssValue
 hi link cssValueTime             cssValue
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sass
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+exe "hi sassVariable" . s:ORANGE . s:NO_FORMAT
+hi link sassId        cssIdentifier
+hi link sassClass     cssClassName
+hi link sassIdChar    sassId
+hi link sassClassChar sassClass
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JavaScript
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 exe "hi javaScript"             . s:WHITE  . s:NO_FORMAT
@@ -245,6 +276,7 @@ hi link javascriptNumber   Number
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CoffeeScript
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi coffeeSpaceError ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 exe "hi coffeeSpecialIdent" . s:ORANGE  . s:NO_FORMAT
 exe "hi coffeeSpecialVar"   . s:YELLOW  . s:NO_FORMAT
 exe "hi coffeeSpecialOp"    . s:WHITE   . s:NO_FORMAT
@@ -258,13 +290,14 @@ exe "hi coffeeCurlies"      . s:WHITE   . s:NO_FORMAT
 exe "hi coffeeExtendedOp"   . s:WHITE   . s:NO_FORMAT
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sass
+" Livescript
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-exe "hi sassVariable" . s:ORANGE . s:NO_FORMAT
-hi link sassId        cssIdentifier
-hi link sassClass     cssClassName
-hi link sassIdChar    sassId
-hi link sassClassChar sassClass
+hi link lsSpaceError coffeeSpaceError
+exe "hi lsIdentifier"       . s:WHITE   . s:NO_FORMAT
+exe "hi lsRegex"            . s:GREEN   . s:NO_FORMAT
+exe "hi lsInfixFunc"        . s:RED     . s:NO_FORMAT
+exe "hi lsProp"             . s:FUCHSIA . s:NO_FORMAT
+exe "hi lsVarInterpolation" . s:WHITE   . s:NO_FORMAT
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Haskell
@@ -272,32 +305,18 @@ hi link sassClassChar sassClass
 hi link hsCharacter String
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PHP
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-exe "hi phpIdentifier"  . s:WHITE . s:NO_FORMAT
-exe "hi phpVarSelector" . s:WHITE . s:NO_FORMAT
-exe "hi phpRepeat"      . s:RED   . s:NO_FORMAT
-exe "hi phpOperator"    . s:WHITE . s:NO_FORMAT
-hi link phpDefine Function
-hi link phpRelation phpOperator
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Standard ML
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 exe "hi smlKeyChar"   . s:WHITE  . s:NO_FORMAT
 exe "hi smlCharacter" . s:PURPLE . s:NO_FORMAT
-" SML in all red is too much to handle
-exe "hi smlKeyWord" . s:BLUE  . s:NO_FORMAT
-exe "hi smlModPath" . s:WHITE . s:BOLD
+exe "hi smlKeyWord"   . s:BLUE  . s:NO_FORMAT
+exe "hi smlModPath"   . s:WHITE . s:BOLD
 hi link smlEncl smlKeyChar
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Livescript
+" Clojure
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Personally, I don't like to see a bunch of red shit while I'm typing.
-hi lsSpaceError ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
-exe "hi lsIdentifier"       . s:WHITE   . s:NO_FORMAT
-exe "hi lsRegex"            . s:GREEN   . s:NO_FORMAT
-exe "hi lsInfixFunc"        . s:RED     . s:NO_FORMAT
-exe "hi lsProp"             . s:FUCHSIA . s:NO_FORMAT
-exe "hi lsVarInterpolation" . s:WHITE   . s:NO_FORMAT
+exe "hi clojureDefine"    . s:BLUE    . s:NO_FORMAT
+exe "hi clojureCharacter" . s:TEAL    . s:NO_FORMAT
+exe "hi clojureKeyword"   . s:FUCHSIA . s:NO_FORMAT
+exe "hi clojureMacro"     . s:YELLOW  . s:NO_FORMAT
