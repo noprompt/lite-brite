@@ -77,7 +77,7 @@ hi Normal ctermbg=0 ctermfg=15 gui=NONE guibg=#000000 guifg=#ffffff
 hi Pmenu ctermbg=232 ctermfg=235 gui=NONE guibg=#141414 guifg=#ededed
 hi PmenuSbar ctermbg=0 ctermfg=15 guibg=#1f1f1f guifg=#ededed
 hi PmenuSel ctermbg=234 ctermfg=215
-hi PreProc ctermfg=102 gui=NONE guifg=#7d7d7d
+hi link PreProc Comment
 hi StatusLine ctermbg=240 ctermfg=234 guibg=#585858 guifg=#1c1c1c
 hi StatusLineNC ctermbg=236 ctermfg=232 guibg=#303030 guifg=#080808
 " Underline search results.
@@ -148,37 +148,43 @@ exe "hi htmlTag"                  . s:BLUE . s:NO_FORMAT
 exe "hi htmlTitle"                . s:BOLD
 exe "hi htmlUnderline"            . s:UNDERLINE
 exe "hi htmlSpecialChar"          . s:ORANGE . s:BOLD
-hi  link  htmlBoldUnderlineItalic  htmlBoldItalicUnderline
-hi  link  htmlH1                   htmlH
-hi  link  htmlH2                   htmlH
-hi  link  htmlH3                   htmlH
-hi  link  htmlH4                   htmlH
-hi  link  htmlH5                   htmlH
-hi  link  htmlH6                   htmlH
-hi  link  htmlItalicBold           htmlBoldItalic
-hi  link  htmlItalicBoldUnderline  htmlBoldItalicUnderline
-hi  link  htmlItalicUnderlineBold  htmlBoldItalicUnderline
-hi  link  htmlSpecialTagName       htmlTag
-hi  link  htmlTagN                 htmlTag
-hi  link  htmlTagName              htmlTag
-hi  link  htmlUnderlineBold        htmlBoldUnderline
-hi  link  htmlUnderlineBoldItalic  htmlBoldUnderlineItalic
-hi  link  htmlUnderlineItalic      htmlItalicUnderline
-hi  link  htmlUnderlineItalicBold  htmlBoldUnderlineItalic
+hi link htmlBoldUnderlineItalic  htmlBoldItalicUnderline
+hi link htmlH1                   htmlH
+hi link htmlH2                   htmlH
+hi link htmlH3                   htmlH
+hi link htmlH4                   htmlH
+hi link htmlH5                   htmlH
+hi link htmlH6                   htmlH
+hi link htmlItalicBold           htmlBoldItalic
+hi link htmlItalicBoldUnderline  htmlBoldItalicUnderline
+hi link htmlItalicUnderlineBold  htmlBoldItalicUnderline
+hi link htmlSpecialTagName       htmlTag
+hi link htmlTagN                 htmlTag
+hi link htmlTagName              htmlTag
+hi link htmlUnderlineBold        htmlBoldUnderline
+hi link htmlUnderlineBoldItalic  htmlBoldUnderlineItalic
+hi link htmlUnderlineItalic      htmlItalicUnderline
+hi link htmlUnderlineItalicBold  htmlBoldUnderlineItalic
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PHP
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-exe "hi phpIdentifier"   . s:WHITE . s:NO_FORMAT
-exe "hi phpVarSelector"  . s:WHITE . s:NO_FORMAT
-exe "hi phpRepeat"       . s:RED   . s:NO_FORMAT
-exe "hi phpOperator"     . s:WHITE . s:NO_FORMAT
-exe "hi phpConditional"  . s:RED   . s:NO_FORMAT
-exe "hi phpStatement"    . s:RED   . s:NO_FORMAT
-exe "hi phpType"         . s:FUCHSIA   . s:NO_FORMAT
-exe "hi phpStorageClass" . s:FUCHSIA   . s:NO_FORMAT
+exe "hi phpIdentifier"      . s:WHITE    . s:NO_FORMAT
+exe "hi phpVarSelector"     . s:WHITE    . s:NO_FORMAT
+exe "hi phpRepeat"          . s:RED      . s:NO_FORMAT
+exe "hi phpOperator"        . s:WHITE    . s:NO_FORMAT
+exe "hi phpConditional"     . s:RED      . s:NO_FORMAT
+exe "hi phpStatement"       . s:RED      . s:NO_FORMAT
+exe "hi phpType"            . s:FUCHSIA  . s:NO_FORMAT
+exe "hi phpStorageClass"    . s:PURPLE   . s:NO_FORMAT
+exe "hi phpException"       . s:RED      . s:NO_FORMAT
+exe "hi phpInterfaces"      . s:WHITE    . s:NO_FORMAT
+exe "hi phpSpecialFunction" . s:YELLOW   . s:NO_FORMAT
+hi link phpFunctions Function
 hi link phpDefine Function
 hi link phpRelation phpOperator
+hi link phpComparison phpOperator
+hi link phpMemberSelector phpOperator
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " XML
@@ -208,15 +214,15 @@ exe "hi cssAuralAttr"       . s:WHITE   . s:NO_FORMAT
 exe "hi cssBoxAttr"         . s:WHITE   . s:NO_FORMAT
 exe "hi cssClassName"       . s:WHITE   . s:NO_FORMAT
 exe "hi cssCommonAttr"      . s:WHITE   . s:NO_FORMAT
-exe "hi cssDefinition"      . s:FUCHSIA . s:NO_FORMAT
+exe "hi cssDefinition"      . s:PURPLE  . s:NO_FORMAT
 exe "hi cssIdentifier"      . s:WHITE   . s:BOLD
-exe "hi cssImportant"       . s:RED     . s:BOLD
+exe "hi cssImportant"       . s:RED     . s:ITALIC
 exe "hi cssInclude"         . s:GREEN   . s:NO_FORMAT
 exe "hi cssMedia"           . s:GREEN   . s:NO_FORMAT
 exe "hi cssMediaType"       . s:RED     . s:NO_FORMAT
 exe "hi cssPagingAttr"      . s:WHITE   . s:NO_FORMAT
-exe "hi cssPseudoClass"     . s:GREEN   . s:NO_FORMAT
-exe "hi cssPseudoClassId"   . s:WHITE   . s:NO_FORMAT
+exe "hi cssPseudoClass"     . s:YELLOW  . s:NO_FORMAT
+exe "hi cssPseudoClassId"   . s:YELLOW  . s:NO_FORMAT
 exe "hi cssPseudoClassLang" . s:WHITE   . s:NO_FORMAT
 exe "hi cssRenderAttr"      . s:WHITE   . s:NO_FORMAT
 exe "hi cssTableAttr"       . s:WHITE   . s:NO_FORMAT
@@ -254,10 +260,14 @@ hi link cssValueTime             cssValue
 " Sass
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 exe "hi sassVariable" . s:ORANGE . s:NO_FORMAT
+hi link sassVariableAssignment sassVariable
+hi link sassProperty  cssDefinition
 hi link sassId        cssIdentifier
 hi link sassClass     cssClassName
 hi link sassIdChar    sassId
 hi link sassClassChar sassClass
+exe "hi sassMixing" . s:BLUE . s:NO_FORMAT
+exe "hi sassInclude" . s:BLUE . s:NO_FORMAT
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JavaScript
@@ -307,16 +317,44 @@ hi link hsCharacter String
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Standard ML
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+exe "hi smlModPath"   . s:WHITE . s:BOLD
+exe "hi smlKeyWord"   . s:BLUE  . s:NO_FORMAT
 exe "hi smlKeyChar"   . s:WHITE  . s:NO_FORMAT
 exe "hi smlCharacter" . s:PURPLE . s:NO_FORMAT
-exe "hi smlKeyWord"   . s:BLUE  . s:NO_FORMAT
-exe "hi smlModPath"   . s:WHITE . s:BOLD
 hi link smlEncl smlKeyChar
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Clojure
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-exe "hi clojureDefine"    . s:BLUE    . s:NO_FORMAT
 exe "hi clojureCharacter" . s:TEAL    . s:NO_FORMAT
+exe "hi clojureDefine"    . s:BLUE    . s:NO_FORMAT
 exe "hi clojureKeyword"   . s:FUCHSIA . s:NO_FORMAT
 exe "hi clojureMacro"     . s:YELLOW  . s:NO_FORMAT
+exe "hi clojurePattern"   . s:GREEN   . s:NO_FORMAT
+exe "hi clojureVariable"  . s:WHITE   . s:BOLD
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Shell
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+exe "hi shTestPattern"   . s:GREEN  . s:NO_FORMAT
+exe "hi shSubShRegion"   . s:WHITE  . s:NO_FORMAT
+exe "hi shRepeat"        . s:RED    . s:NO_FORMAT
+exe "hi shRange"         . s:WHITE  . s:NO_FORMAT
+exe "hi shOption"        . s:PURPLE . s:NO_FORMAT
+exe "hi shOperator"      . s:WHITE  . s:NO_FORMAT
+exe "hi shLoop"          . s:RED    . s:NO_FORMAT
+exe "hi shExpr"          . s:WHITE  . s:NO_FORMAT
+" Don't highlight bare words when using the echo command. This is a reminder
+" to use string literals instead.
+exe "hi shEcho"          . s:WHITE  . s:NO_FORMAT
+exe "hi shDerefVarArray" . s:GREEN  . s:NO_FORMAT
+exe "hi shDerefSimple"   . s:WHITE  . s:NO_FORMAT
+exe "hi shDeref"         . s:WHITE  . s:NO_FORMAT
+exe "hi shConditional"   . s:RED    . s:NO_FORMAT
+exe "hi shCommandSub"    . s:YELLOW . s:NO_FORMAT
+exe "hi shCmdSubRegion"  . s:WHITE  . s:NO_FORMAT
+hi link shAlias Normal
+hi link shVariable Normal
+hi link shSetList Normal
+hi link shTestOpr Normal
+hi link shQuote String
