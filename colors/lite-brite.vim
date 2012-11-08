@@ -14,7 +14,6 @@ let g:colors_name = "Lite Brite"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color variables
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" TODO: Create variables for background colors as well.
 let s:NO_FG    = " ctermfg=NONE guifg=NONE"
 let s:NO_BG    = " ctermbg=NONE guibg=NONE"
 let s:BLUE     = " ctermfg=117  guifg=#87d7ff"
@@ -43,8 +42,12 @@ let s:GREY13   = " ctermfg=245  guifg=#8a8a8a"
 
 let s:GREY1_BG = " ctermbg=233  guibg=#121212"
 let s:GREY2_BG = " ctermbg=234  guibg=#1c1c1c"
+let s:GREY3_BG = " ctermbg=235  guibg=#262626"
+let s:GREY4_BG = " ctermbg=236  guibg=#303030"
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Formatting
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let s:BOLD                  = " cterm=bold gui=bold"
 let s:ITALIC                = " gui=italic"
 let s:UNDERLINE             = " cterm=underline gui=underline"
@@ -54,24 +57,27 @@ let s:BOLD_ITALIC_UNDERLINE = " cterm=bold,underline gui=bold,italic,underline"
 let s:ITALIC_UNDERLINE      = " cterm=underline gui=italic,underline"
 let s:NO_FORMAT             = " cterm=NONE gui=NONE"
 
-exe "hi Boolean"   . s:ORANGE    . s:NO_FORMAT
-exe "hi Character" . s:WHITE     . s:NO_FORMAT
-exe "hi Comment"   . s:GREY6     . s:ITALIC
-exe "hi Constant"  . s:WHITE     . s:BOLD
-exe "hi Delimiter" . s:NO_FORMAT
-exe "hi Function"  . s:BLUE      . s:NO_FORMAT
-exe "hi Keyword"   . s:RED       . s:NO_FORMAT
-exe "hi Number"    . s:GREEN     . s:NO_FORMAT
-exe "hi Special"   . s:RED       . s:NO_FORMAT
-exe "hi Statement" . s:BLUE      . s:NO_FORMAT
-exe "hi String"    . s:TEAL      . s:NO_FORMAT
-exe "hi Todo"      . s:NO_BG     . s:GREY13
-exe "hi Type"      . s:BLUE      . s:NO_FORMAT
-hi ColorColumn ctermbg=233 guibg=#121212
-exe "hi CursorLine" . s:GREY1_BG . s:NO_FORMAT
+exe "hi Boolean"      . s:ORANGE    . s:NO_FORMAT
+exe "hi Character"    . s:WHITE     . s:NO_FORMAT
+exe "hi Comment"      . s:GREY6     . s:ITALIC
+exe "hi Constant"     . s:WHITE     . s:BOLD
+exe "hi Delimiter"    . s:NO_FORMAT
+exe "hi Function"     . s:BLUE      . s:NO_FORMAT
+exe "hi Keyword"      . s:RED       . s:NO_FORMAT
+exe "hi Number"       . s:GREEN     . s:NO_FORMAT
+exe "hi Special"      . s:RED       . s:NO_FORMAT
+exe "hi Statement"    . s:BLUE      . s:NO_FORMAT
+exe "hi String"       . s:TEAL      . s:NO_FORMAT
+exe "hi Todo"         . s:NO_BG     . s:GREY13
+exe "hi Type"         . s:BLUE      . s:NO_FORMAT
+exe "hi ColorColumn"  . s:GREY1_BG . s:NO_FORMAT
+exe "hi CursorLine"   . s:GREY1_BG . s:NO_FORMAT
+exe "hi CursorLineNr" . s:GREY4    . s:NO_FORMAT
+exe "hi MatchParen"   . s:WHITE . s:GREY4_BG . s:BOLD
+
+" TODO: Clean this up.
 hi Folded ctermfg=240 ctermbg=233 guifg=#585858 guibg=#121212
 hi LineNr ctermbg=233 ctermfg=235 guibg=#121212 guifg=#262626
-hi MatchParen cterm=bold ctermbg=0 ctermfg=15 gui=bold guibg=#1f1f1f guifg=#ededed
 hi NonText ctermbg=0 ctermfg=59 gui=NONE guibg=#141414 guifg=#3d3d3d
 hi Normal ctermbg=0 ctermfg=15 gui=NONE guibg=#000000 guifg=#ffffff
 hi Pmenu ctermbg=232 ctermfg=235 gui=NONE guibg=#141414 guifg=#ededed
@@ -93,7 +99,8 @@ hi link Identifier Normal
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Viml
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-exe "hi vimGroup" . s:WHITE
+exe "hi vimGroup" . s:WHITE . s:NO_FORMAT
+exe "hi vimVar"   . s:WHITE . s:NO_FORMAT
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " netrw
@@ -113,8 +120,7 @@ exe "hi rubyInstanceVariable" . s:GREEN
 exe "hi rubyPseudoVariable"   . s:WHITE
 exe "hi rubyRegexp"           . s:GREEN   . s:NO_FORMAT
 exe "hi rubySymbol"           . s:FUCHSIA . s:NO_FORMAT
-"hi link rubyAttribute Keyword
-exe "hi rubyAttribute" . s:BLUE . s:NO_FORMAT
+exe "hi rubyAttribute"        . s:BLUE    . s:NO_FORMAT
 hi link rubyClass Keyword
 hi link rubyClassDeclaration Constant
 hi link rubyConditional Keyword
@@ -169,17 +175,18 @@ hi link htmlUnderlineItalicBold  htmlBoldUnderlineItalic
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PHP
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-exe "hi phpIdentifier"      . s:WHITE    . s:NO_FORMAT
-exe "hi phpVarSelector"     . s:WHITE    . s:NO_FORMAT
-exe "hi phpRepeat"          . s:RED      . s:NO_FORMAT
-exe "hi phpOperator"        . s:WHITE    . s:NO_FORMAT
 exe "hi phpConditional"     . s:RED      . s:NO_FORMAT
-exe "hi phpStatement"       . s:RED      . s:NO_FORMAT
-exe "hi phpType"            . s:FUCHSIA  . s:NO_FORMAT
-exe "hi phpStorageClass"    . s:PURPLE   . s:NO_FORMAT
 exe "hi phpException"       . s:RED      . s:NO_FORMAT
+exe "hi phpIdentifier"      . s:WHITE    . s:NO_FORMAT
 exe "hi phpInterfaces"      . s:WHITE    . s:NO_FORMAT
+exe "hi phpIntVar"          . s:WHITE    . s:BOLD
+exe "hi phpOperator"        . s:WHITE    . s:NO_FORMAT
+exe "hi phpRepeat"          . s:RED      . s:NO_FORMAT
 exe "hi phpSpecialFunction" . s:YELLOW   . s:NO_FORMAT
+exe "hi phpStatement"       . s:RED      . s:NO_FORMAT
+exe "hi phpStorageClass"    . s:PURPLE   . s:NO_FORMAT
+exe "hi phpType"            . s:FUCHSIA  . s:NO_FORMAT
+exe "hi phpVarSelector"     . s:WHITE    . s:NO_FORMAT
 hi link phpFunctions Function
 hi link phpDefine Function
 hi link phpRelation phpOperator
