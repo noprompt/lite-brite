@@ -279,16 +279,25 @@ exe "hi sassInclude" . s:BLUE . s:NO_FORMAT
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JavaScript
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-exe "hi javaScript"             . s:WHITE  . s:NO_FORMAT
-exe "hi javaScriptIdentifier"   . s:YELLOW . s:NO_FORMAT
-exe "hi javaScriptNull"         . s:ORANGE . s:NO_FORMAT
-exe "hi javaScriptOperator"     . s:RED    . s:NO_FORMAT
-exe "hi javaScriptRegexpString" . s:GREEN  . s:NO_FORMAT
-exe "hi javaScriptStatement"    . s:RED    . s:NO_FORMAT
-hi link javaScriptBraces   Normal
-hi link javaScriptFunction Function
-hi link javaScriptGlobal   Constant
-hi link javascriptNumber   Number
+exe "hi javaScript"             . s:WHITE   . s:NO_FORMAT
+exe "hi javaScriptIdentifier"   . s:PURPLE  . s:NO_FORMAT
+exe "hi javaScriptType"         . s:PURPLE  . s:NO_FORMAT
+exe "hi javaScriptNull"         . s:ORANGE  . s:NO_FORMAT
+exe "hi javaScriptOperator"     . s:RED     . s:NO_FORMAT
+exe "hi javaScriptRegexpString" . s:GREEN   . s:NO_FORMAT
+exe "hi javaScriptStatement"    . s:RED     . s:NO_FORMAT
+exe "hi javaScriptConditional"  . s:RED     . s:NO_FORMAT
+exe "hi javaScriptMember"       . s:YELLOW  . s:NO_FORMAT
+exe "hi javaScriptOperator"     . s:YELLOW  . s:NO_FORMAT
+exe "hi javaScriptLabel"        . s:FUCHSIA . s:NO_FORMAT
+exe "hi javaScriptBranch"       . s:RED     . s:NO_FORMAT
+exe "hi javaScriptExceptions"   . s:WHITE   . s:BOLD
+exe "hi javaScriptFutureKeys"   . s:FUCHSIA . s:NO_FORMAT
+hi link javaScriptBraces        Normal
+hi link javaScriptFunction      Function
+hi link javaScriptGlobal        Constant
+hi link javaScriptGlobalObjects Constant
+hi link javascriptNumber        Number
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CoffeeScript
