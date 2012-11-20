@@ -374,3 +374,13 @@ hi link shVariable Normal
 hi link shSetList Normal
 hi link shTestOpr Normal
 hi link shQuote String
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MySQL
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+exe "hi mysqlType"     . s:FUCHSIA . s:NO_FORMAT
+exe "hi mysqlSpecial"  . s:ORANGE  . s:NO_FORMAT
+exe "hi mysqlOperator" . s:PINK    . s:NO_FORMAT
+exe "hi mysqlKeyword"  . s:BLUE    . s:NO_FORMAT
+exe "hi mysqlFunction" . s:RED     . s:NO_FORMAT
+exe "hi mysqlVariable" . s:YELLOW  . s:NO_FORMAT
