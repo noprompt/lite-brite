@@ -4,6 +4,10 @@ LiteBrite is a heavily customized dark color scheme for Vim. It is designed
 primarily with 256 color terminals in mind and attempts to provide a consistent
 experience for a variety of file types.
 
+* [Rationale](https://github.com/noprompt/lite-brite#rationale "Rationale")
+* [Screenshots](https://github.com/noprompt/lite-brite#screenshots "Screenshots")
+* [Contributing](https://github.com/noprompt/lite-brite#contributing "Contributing")
+
 ## Rationale
 
 The world of Vim is full of fantastic themes. There are literally thousands. So
@@ -30,7 +34,7 @@ both.
 
 * c
 * c++
-* clojure
+* [clojure](https://github.com/noprompt/lite-brite#clojure "Screenshot")
 * coffeescript
 * css
 * haskell
@@ -40,20 +44,23 @@ both.
 * mysql
 * netwr
 * php
-* ruby
+* [ruby](https://github.com/noprompt/lite-brite#ruby "Screenshot")
 * sass
 * sh
 * sml
-* viml
+* [viml](https://github.com/noprompt/lite-brite#vim "Screenshot")
 * xml
 
 ## Screenshots
 
-### Vim
-![Vim](http://f.cl.ly/items/423H3S3N122v2V10461a/lite-brite-vim.png "Vim")
+### Clojure
+![Clojure](http://f.cl.ly/items/3t46283K1t0J042D1U13/lite-brite-clojure.png "Clojure")
 
 ### Ruby
 ![Ruby](http://f.cl.ly/items/0619241l082u2u3L0h1Q/lite-brite-ruby.png "Ruby")
+
+### Vim
+![Vim](http://f.cl.ly/items/423H3S3N122v2V10461a/lite-brite-vim.png "Vim")
 
 ## Contributing
 
