@@ -46,7 +46,7 @@ both.
 * php
 * [ruby](https://github.com/noprompt/lite-brite#ruby "Screenshot")
 * sass
-* sh
+* [shell](https://github.com/noprompt/lite-brite#shell "Screenshot")
 * sml
 * [viml](https://github.com/noprompt/lite-brite#vim "Screenshot")
 * xml
@@ -58,6 +58,9 @@ both.
 
 ### Ruby
 ![Ruby](http://f.cl.ly/items/0619241l082u2u3L0h1Q/lite-brite-ruby.png "Ruby")
+
+### Shell
+![Shell](http://f.cl.ly/items/2k2t1v1Z1Y002i3c2n1k/lite-brite-shell.png "Shell")
 
 ### Vim
 ![Vim](http://f.cl.ly/items/423H3S3N122v2V10461a/lite-brite-vim.png "Vim")
