@@ -62,16 +62,16 @@ let s:NO_FORMAT             = " cterm=NONE gui=NONE"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color highlights
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-exe "hi litebriteBlue" . s:BLUE . s:NO_FORMAT
+exe "hi litebriteBlue"    . s:BLUE    . s:NO_FORMAT
 exe "hi litebriteFuchsia" . s:FUCHSIA . s:NO_FORMAT
-exe "hi litebriteGreen" . s:GREEN . s:NO_FORMAT
-exe "hi litebriteOrange" . s:ORANGE . s:NO_FORMAT
-exe "hi litebritePink" . s:PINK . s:NO_FORMAT
-exe "hi litebritePurple" . s:PURPLE . s:NO_FORMAT
-exe "hi litebriteRed" . s:RED . s:NO_FORMAT
-exe "hi litebriteTeal" . s:TEAL . s:NO_FORMAT
-exe "hi litebriteWhite" . s:WHITE . s:NO_FORMAT
-exe "hi litebriteYellow" . s:YELLOW . s:NO_FORMAT
+exe "hi litebriteGreen"   . s:GREEN   . s:NO_FORMAT
+exe "hi litebriteOrange"  . s:ORANGE  . s:NO_FORMAT
+exe "hi litebritePink"    . s:PINK    . s:NO_FORMAT
+exe "hi litebritePurple"  . s:PURPLE  . s:NO_FORMAT
+exe "hi litebriteRed"     . s:RED     . s:NO_FORMAT
+exe "hi litebriteTeal"    . s:TEAL    . s:NO_FORMAT
+exe "hi litebriteWhite"   . s:WHITE   . s:NO_FORMAT
+exe "hi litebriteYellow"  . s:YELLOW  . s:NO_FORMAT
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Top level highlights
@@ -89,10 +89,11 @@ exe "hi Statement"    . s:BLUE      . s:NO_FORMAT
 exe "hi String"       . s:TEAL      . s:NO_FORMAT
 exe "hi Todo"         . s:NO_BG     . s:GREY13
 exe "hi Type"         . s:BLUE      . s:NO_FORMAT
-exe "hi ColorColumn"  . s:GREY1_BG . s:NO_FORMAT
-exe "hi CursorLine"   . s:GREY1_BG . s:NO_FORMAT
-exe "hi CursorLineNr" . s:GREY4    . s:NO_FORMAT
-exe "hi MatchParen"   . s:WHITE . s:GREY4_BG . s:BOLD
+exe "hi ColorColumn"  . s:GREY1_BG  . s:NO_FORMAT
+exe "hi CursorLine"   . s:GREY1_BG  . s:NO_FORMAT
+exe "hi CursorLineNr" . s:GREY4     . s:NO_FORMAT
+exe "hi MatchParen"   . s:WHITE     . s:GREY4_BG       . s:BOLD
+exe "hi SpellBad"     . s:RED       . s:BOLD_UNDERLINE . s:NO_BG
 
 " TODO: Use vars and links where possible.
 hi Folded ctermfg=240 ctermbg=233 guifg=#585858 guibg=#121212
