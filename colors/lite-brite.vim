@@ -1,4 +1,4 @@
-" Title: Lite Brite
+" Title: LiteBrite
 " Author: Joel Holdbrooks <cjholdbrooks@gmail.com>
 " URI: https://github.com/noprompt/lite-brite
 
@@ -9,23 +9,25 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let g:colors_name = "Lite Brite"
+let g:colors_name = "LiteBrite"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color variables
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let s:NO_FG    = " ctermfg=NONE guifg=NONE"
 let s:NO_BG    = " ctermbg=NONE guibg=NONE"
+
 let s:BLUE     = " ctermfg=117  guifg=#87d7ff"
-let s:GREEN    = " ctermfg=120  guifg=#87afd7"
-let s:ORANGE   = " ctermfg=221  guifg=#ffd75f"
 let s:FUCHSIA  = " ctermfg=213  guifg=#ff87ff"
+let s:GREEN    = " ctermfg=120  guifg=#87ff87"
+let s:ORANGE   = " ctermfg=221  guifg=#ffd75f"
 let s:PINK     = " ctermfg=219  guifg=#ffafff"
-let s:PURPLE   = " ctermfg=183  guifg=#e7b2ff"
-let s:RED      = " ctermfg=210  guifg=#ff87af"
+let s:PURPLE   = " ctermfg=183  guifg=#d7afff"
+let s:RED      = " ctermfg=210  guifg=#ff8787"
+let s:TEAL     = " ctermfg=14   guifg=#00ffff"
 let s:WHITE    = " ctermfg=15   guifg=#ffffff"
 let s:YELLOW   = " ctermfg=227  guifg=#ffff5f"
-let s:TEAL     = " ctermfg=14   guifg=#00ffff"
+
 let s:GREY1    = " ctermfg=233  guifg=#121212"
 let s:GREY2    = " ctermfg=234  guifg=#1c1c1c"
 let s:GREY3    = " ctermfg=235  guifg=#262626"
@@ -57,6 +59,23 @@ let s:BOLD_ITALIC_UNDERLINE = " cterm=bold,underline gui=bold,italic,underline"
 let s:ITALIC_UNDERLINE      = " cterm=underline gui=italic,underline"
 let s:NO_FORMAT             = " cterm=NONE gui=NONE"
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Color highlights
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+exe "hi litebriteBlue" . s:BLUE . s:NO_FORMAT
+exe "hi litebriteFuchsia" . s:FUCHSIA . s:NO_FORMAT
+exe "hi litebriteGreen" . s:GREEN . s:NO_FORMAT
+exe "hi litebriteOrange" . s:ORANGE . s:NO_FORMAT
+exe "hi litebritePink" . s:PINK . s:NO_FORMAT
+exe "hi litebritePurple" . s:PURPLE . s:NO_FORMAT
+exe "hi litebriteRed" . s:RED . s:NO_FORMAT
+exe "hi litebriteTeal" . s:TEAL . s:NO_FORMAT
+exe "hi litebriteWhite" . s:WHITE . s:NO_FORMAT
+exe "hi litebriteYellow" . s:YELLOW . s:NO_FORMAT
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Top level highlights
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 exe "hi Boolean"      . s:ORANGE    . s:NO_FORMAT
 exe "hi Character"    . s:WHITE     . s:NO_FORMAT
 exe "hi Comment"      . s:GREY6     . s:ITALIC
@@ -75,7 +94,7 @@ exe "hi CursorLine"   . s:GREY1_BG . s:NO_FORMAT
 exe "hi CursorLineNr" . s:GREY4    . s:NO_FORMAT
 exe "hi MatchParen"   . s:WHITE . s:GREY4_BG . s:BOLD
 
-" TODO: Clean this up.
+" TODO: Use vars and links where possible.
 hi Folded ctermfg=240 ctermbg=233 guifg=#585858 guibg=#121212
 hi LineNr ctermbg=233 ctermfg=235 guibg=#121212 guifg=#262626
 hi NonText ctermbg=0 ctermfg=59 gui=NONE guibg=#141414 guifg=#3d3d3d
@@ -83,7 +102,6 @@ hi Normal ctermbg=0 ctermfg=15 gui=NONE guibg=#000000 guifg=#ffffff
 hi Pmenu ctermbg=232 ctermfg=235 gui=NONE guibg=#141414 guifg=#ededed
 hi PmenuSbar ctermbg=0 ctermfg=15 guibg=#1f1f1f guifg=#ededed
 hi PmenuSel ctermbg=234 ctermfg=215
-hi link PreProc Comment
 hi StatusLine ctermbg=240 ctermfg=234 guibg=#585858 guifg=#1c1c1c
 hi StatusLineNC ctermbg=236 ctermfg=232 guibg=#303030 guifg=#080808
 " Underline search results.
@@ -93,14 +111,36 @@ hi TablineFill ctermfg=233
 hi TablineSel ctermfg=248 ctermbg=236
 hi VertSplit ctermbg=240 ctermfg=233 guibg=#585858 guifg=#121212
 hi Visual ctermbg=233 ctermfg=222 guibg=#121212 guifg=#ffd787
+
+hi link PreProc Comment
 hi link Float Number
 hi link Identifier Normal
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Viml
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-exe "hi vimGroup" . s:WHITE . s:NO_FORMAT
-exe "hi vimVar"   . s:WHITE . s:NO_FORMAT
+hi link vimAddress litebriteYellow
+hi link vimAutoCmd litebritePurple
+hi link vimAutoEvent litebritePink
+hi link vimCommentTitle Todo
+hi link vimContinue litebriteWhite
+hi link vimFunction litebriteWhite
+hi link vimFuncSID litebriteYellow
+hi link vimGroup litebriteWhite
+hi link vimHiAttrib litebriteGreen
+hi link vimHiCterm litebriteFuchsia
+hi link vimHiCtermFgBg litebriteFuchsia
+hi link vimHiGui litebriteFuchsia
+hi link vimHiGuiFgBg litebriteFuchsia
+hi link vimLet litebriteRed
+hi link vimMap litebritePurple
+hi link vimMapModKey litebriteYellow
+hi link vimNotation litebriteYellow
+hi link vimOper litebriteWhite
+hi link vimSetSep litebriteWhite
+hi link vimSubstDelim litebriteGreen
+hi link vimSubstPat litebriteGreen
+hi link vimVar litebriteWhite
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " netrw
