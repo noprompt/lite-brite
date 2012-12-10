@@ -191,9 +191,15 @@ hi link vimVar litebriteWhite
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " netrw
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi link netrwDir litebritePurple
-hi link netrwClassify litebritePurple
-hi link netrwHelpCmd litebritePurple
+hi link netrwClassify litebriteBoldWhite
+hi link netrwCmdSep litebriteWhite
+hi link netrwDir litebriteBlue
+hi link netrwExe litebriteRed
+hi link netrwHelpCmd litebriteYellow
+hi link netrwList litebritePurple
+hi link netrwQuickHelp litebriteYellow
+hi link netrwTreeBar litebriteWhite
+hi link netrwVersion litebriteBoldWhite
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ruby
