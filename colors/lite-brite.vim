@@ -226,7 +226,9 @@ hi link rubyInclude Keyword
 hi link rubyInterpolationDelimiter Comment
 hi link rubyModuleDeclaration Constant
 hi link rubyRailsUserClass Constant
-hi link rubyPredefinedVariable Constant
+hi link rubyPredefinedConstant litebriteBoldYellow
+hi link rubyPredefinedVariable litebriteYellow
+hi link rubyPseudoVariable litebriteYellow
 hi link rubyRegexpDelimiter rubyRegexp
 hi link rubySharpBang Comment
 hi link rubyStringDelimiter String
