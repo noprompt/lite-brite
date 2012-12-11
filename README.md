@@ -41,7 +41,7 @@ both.
 * html
 * javascript
 * livescript
-* mysql
+* [mysql](https://github.com/noprompt/lite-brite#sql "Screenshot")
 * netwr
 * php
 * [ruby](https://github.com/noprompt/lite-brite#ruby "Screenshot")
@@ -54,15 +54,23 @@ both.
 ## Screenshots
 
 ### Clojure
+
 ![Clojure](http://f.cl.ly/items/3t46283K1t0J042D1U13/lite-brite-clojure.png "Clojure")
 
+### SQL
+
+![SQL](http://f.cl.ly/items/1l0v2p3I2x1G2I1U0B24/lite-brite-sql.png "SQL")
+
 ### Ruby
+
 ![Ruby](http://f.cl.ly/items/0619241l082u2u3L0h1Q/lite-brite-ruby.png "Ruby")
 
 ### Shell
+
 ![Shell](http://f.cl.ly/items/2k2t1v1Z1Y002i3c2n1k/lite-brite-shell.png "Shell")
 
 ### Vim
+
 ![Vim](http://f.cl.ly/items/423H3S3N122v2V10461a/lite-brite-vim.png "Vim")
 
 ## Contributing
