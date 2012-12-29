@@ -21,11 +21,11 @@ let s:BLACK = " ctermfg=0 guifg=#000000"
 let s:BLUE = " ctermfg=117 guifg=#87d7ff"
 let s:FUCHSIA = " ctermfg=213 guifg=#ff87ff"
 let s:GREEN = " ctermfg=120 guifg=#87ff87"
-let s:ORANGE = " ctermfg=221 guifg=#ffd75f"
+let s:ORANGE = " ctermfg=221 guifg=#fad482"
 let s:PINK = " ctermfg=219 guifg=#ffafff"
 let s:PURPLE = " ctermfg=183 guifg=#d7afff"
 let s:RED = " ctermfg=210 guifg=#ff8787"
-let s:TEAL = " ctermfg=14 guifg=#00ffff"
+let s:TURQUOISE = " ctermfg=45 guifg=#00ddff"
 let s:WHITE = " ctermfg=15 guifg=#ffffff"
 let s:YELLOW = " ctermfg=227 guifg=#ffff5f"
 
@@ -85,7 +85,7 @@ exe "hi litebriteOrange" . s:ORANGE . s:NO_FORMAT
 exe "hi litebritePink" . s:PINK . s:NO_FORMAT
 exe "hi litebritePurple" . s:PURPLE . s:NO_FORMAT
 exe "hi litebriteRed" . s:RED . s:NO_FORMAT
-exe "hi litebriteTeal" . s:TEAL . s:NO_FORMAT
+exe "hi litebriteTurquoise" . s:TURQUOISE . s:NO_FORMAT
 exe "hi litebriteWhite" . s:WHITE . s:NO_FORMAT
 exe "hi litebriteYellow" . s:YELLOW . s:NO_FORMAT
 
@@ -97,7 +97,7 @@ exe "hi litebriteBoldOrange" . s:ORANGE . s:BOLD
 exe "hi litebriteBoldPink" . s:PINK . s:BOLD
 exe "hi litebriteBoldPurple" . s:PURPLE . s:BOLD
 exe "hi litebriteBoldRed" . s:RED . s:BOLD
-exe "hi litebriteBoldTeal" . s:TEAL . s:BOLD
+exe "hi litebriteBoldTurquoise" . s:TURQUOISE . s:BOLD
 exe "hi litebriteBoldWhite" . s:WHITE . s:BOLD
 exe "hi litebriteBoldYellow" . s:YELLOW . s:BOLD
 
@@ -109,7 +109,7 @@ exe "hi litebriteItalicOrange" . s:ORANGE . s:ITALIC
 exe "hi litebriteItalicPink" . s:PINK . s:ITALIC
 exe "hi litebriteItalicPurple" . s:PURPLE . s:ITALIC
 exe "hi litebriteItalicRed" . s:RED . s:ITALIC
-exe "hi litebriteItalicTeal" . s:TEAL . s:ITALIC
+exe "hi litebriteItalicTurquoise" . s:TURQUOISE . s:ITALIC
 exe "hi litebriteItalicWhite" . s:WHITE . s:ITALIC
 exe "hi litebriteItalicYellow" . s:YELLOW . s:ITALIC
 
@@ -128,7 +128,7 @@ exe "hi Keyword" . s:RED . s:NO_FORMAT
 exe "hi Number" . s:GREEN . s:NO_FORMAT
 exe "hi Special" . s:RED . s:NO_FORMAT
 exe "hi Statement" . s:BLUE . s:NO_FORMAT
-exe "hi String" . s:TEAL . s:NO_FORMAT
+exe "hi String" . s:TURQUOISE . s:NO_FORMAT
 exe "hi Todo" . s:NO_BG . s:GREY13
 exe "hi Type" . s:BLUE . s:NO_FORMAT
 exe "hi ColorColumn" . s:GREY1_BG . s:NO_FORMAT
@@ -204,34 +204,34 @@ hi link netrwVersion litebriteBoldWhite
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ruby
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi link rubyAccess litebriteBlue
-hi link rubyBlockParameter litebriteOrange
-hi link rubyClassVariable litebriteGreen
-hi link rubyDataDirective litebriteYellow
-hi link rubyInstanceVariable liteBriteGreen
-hi link rubyPseudoVariable litebriteWhite
-hi link rubyRegexp litebriteGreen
-hi link rubySymbol litebriteFuchsia
+hi link rubyAccess litebritePurple
 hi link rubyAttribute litebriteBlue
+hi link rubyBlockParameter litebriteOrange
 hi link rubyClass Keyword
 hi link rubyClassDeclaration Constant
-hi link rubyConditional Keyword
+hi link rubyClassVariable litebriteOrange
+hi link rubyConditional litebritePink
 hi link rubyConstant Constant
 hi link rubyControl Keyword
 hi link rubyData Comment
+hi link rubyDataDirective litebriteYellow
 hi link rubyDefine Keyword
 hi link rubyFunction Function
 hi link rubyGlobalVariable Constant
 hi link rubyInclude Keyword
+hi link rubyInstanceVariable litebriteGreen
 hi link rubyInterpolationDelimiter Comment
 hi link rubyModuleDeclaration Constant
-hi link rubyRailsUserClass Constant
 hi link rubyPredefinedConstant litebriteBoldYellow
 hi link rubyPredefinedVariable litebriteYellow
+hi link rubyPseudoVariable litebriteWhite
 hi link rubyPseudoVariable litebriteYellow
+hi link rubyRailsUserClass Constant
+hi link rubyRegexp litebriteGreen
 hi link rubyRegexpDelimiter rubyRegexp
 hi link rubySharpBang Comment
 hi link rubyStringDelimiter String
+hi link rubySymbol litebriteFuchsia
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " HTML
@@ -298,7 +298,7 @@ hi link phpMemberSelector phpOperator
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " C
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi link cCharacter litebriteTeal
+hi link cCharacter litebriteTurquoise
 hi link cConditional litebriteRed
 hi link cDefine Comment
 hi link cInclude Comment
@@ -499,13 +499,3 @@ hi link mysqlVariable litebriteYellow
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi link makeTarget litebriteFuchsia
 hi link makeIdent litebriteBoldWhite
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Lisp
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi link lispAtom litebriteWhite
-hi link lispAtomList litebriteWhite
-hi link lispAtomMark litebriteRed
-hi link lispDecl litebriteRed
-hi link lispEscapeSpecial litebriteWhiteBold
-hi link lispFunc litebriteBlue
