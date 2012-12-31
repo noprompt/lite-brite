@@ -499,3 +499,14 @@ hi link mysqlVariable litebriteYellow
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi link makeTarget litebriteFuchsia
 hi link makeIdent litebriteBoldWhite
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Lisp
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi link lispAtom litebriteWhite
+hi link lispAtomList litebriteWhite
+hi link lispAtomMark litebriteRed
+hi link lispDecl litebriteRed
+hi link lispEscapeSpecial litebriteBoldWhite
+hi link lispFunc litebriteBlue
+hi link lispKey litebriteFuchsia
