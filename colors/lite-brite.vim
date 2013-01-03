@@ -234,6 +234,19 @@ hi link rubyStringDelimiter String
 hi link rubySymbol litebriteFuchsia
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YARD
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+exec "hi yardArrow" . s:GREY8 . s:NO_FORMAT
+exec "hi yardComma" . s:GREY8 . s:NO_FORMAT
+exec "hi yardDuckType" . s:GREY8 . s:NO_FORMAT
+exec "hi yardHashAngle" . s:GREY8 . s:NO_FORMAT
+exec "hi yardHashCurly" . s:GREY8 . s:NO_FORMAT
+exec "hi yardOrderDependentList" . s:GREY8 . s:NO_FORMAT
+exec "hi yardParametricType" . s:GREY8. s:NO_FORMAT
+exec "hi yardType" . s:GREY8. s:BOLD
+exec "hi yardTypeList" . s:GREY8 . s:NO_FORMAT
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " HTML
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 exe "hi htmlBold" . s:BOLD
