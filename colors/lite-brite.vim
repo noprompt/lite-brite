@@ -234,7 +234,15 @@ hi link rubyStringDelimiter String
 hi link rubySymbol litebriteFuchsia
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YAML
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi link yamlBlockMappingKey litebriteFuchsia
+hi link yamlKeyValueDelimiter litebriteFuchsia
+hi link yamlFlowIndicator litebriteWhite
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YARD
+" SEE: https://github.com/noprompt/vim-yardoc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 exec "hi yardArrow" . s:GREY8 . s:NO_FORMAT
 exec "hi yardComma" . s:GREY8 . s:NO_FORMAT
