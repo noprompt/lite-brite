@@ -295,6 +295,17 @@ hi link xmlAttrib htmlArg
 hi link xmlEndTag htmlTagN
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" HAML
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+hi link hamlIdChar cssIdentifier
+hi link hamlId cssIdentifier
+hi link hamlClassChar cssClassName
+hi link hamlClass cssClassName
+hi link hamlTag htmlTag
+hi link hamlTagName htmlTag
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PHP
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
