@@ -542,3 +542,11 @@ hi link lispDecl litebriteRed
 hi link lispEscapeSpecial litebriteBoldWhite
 hi link lispFunc litebriteBlue
 hi link lispKey litebriteFuchsia
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" twig
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi link twigBlockName litebriteOrange
+hi link twigSpecial litebriteYellow
+hi link twigVariable litebriteFuchsia
+hi link twigFilter litebriteGreen
