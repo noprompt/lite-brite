@@ -586,10 +586,12 @@ hi link lispKey litebriteFuchsia
 " twig
 " SEE: https://github.com/beyondwords/vim-twig
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi link twigTagDelim litebriteGrey13
+hi link twigBlockName litebriteBoldOrange
+hi link twigFilter litebriteGreen
+hi link twigNumber litebriteRed
 hi link twigSpecial litebriteYellow
 hi link twigStatement litebritePurple
-hi link twigFilter litebriteGreen
-hi link twigBlockName litebriteBoldOrange
+hi link twigTagBlock litebriteGrey13
+hi link twigTagDelim litebriteGrey13
+hi link twigVarBlock litebriteGrey13 
 hi link twigVariable litebriteFuchsia
-hi link twigNumber litebriteRed
