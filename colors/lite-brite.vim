@@ -88,6 +88,19 @@ exe "hi litebriteRed" . s:RED . s:NO_FORMAT
 exe "hi litebriteTurquoise" . s:TURQUOISE . s:NO_FORMAT
 exe "hi litebriteWhite" . s:WHITE . s:NO_FORMAT
 exe "hi litebriteYellow" . s:YELLOW . s:NO_FORMAT
+exe "hi litebriteGrey1" . s:GREY1 . s:NO_FORMAT
+exe "hi litebriteGrey2" . s:GREY2 . s:NO_FORMAT
+exe "hi litebriteGrey3" . s:GREY3 . s:NO_FORMAT
+exe "hi litebriteGrey4" . s:GREY4 . s:NO_FORMAT
+exe "hi litebriteGrey5" . s:GREY5 . s:NO_FORMAT
+exe "hi litebriteGrey6" . s:GREY6 . s:NO_FORMAT
+exe "hi litebriteGrey7" . s:GREY7 . s:NO_FORMAT
+exe "hi litebriteGrey8" . s:GREY8 . s:NO_FORMAT
+exe "hi litebriteGrey9" . s:GREY9 . s:NO_FORMAT
+exe "hi litebriteGrey10" . s:GREY10 . s:NO_FORMAT
+exe "hi litebriteGrey11" . s:GREY11 . s:NO_FORMAT
+exe "hi litebriteGrey12" . s:GREY12 . s:NO_FORMAT
+exe "hi litebriteGrey13" . s:GREY13 . s:NO_FORMAT
 
 " Bold
 exe "hi litebriteBoldBlue" . s:BLUE . s:BOLD
@@ -100,6 +113,19 @@ exe "hi litebriteBoldRed" . s:RED . s:BOLD
 exe "hi litebriteBoldTurquoise" . s:TURQUOISE . s:BOLD
 exe "hi litebriteBoldWhite" . s:WHITE . s:BOLD
 exe "hi litebriteBoldYellow" . s:YELLOW . s:BOLD
+exe "hi litebriteBoldGrey1" . s:GREY1 . s:BOLD
+exe "hi litebriteBoldGrey2" . s:GREY2 . s:BOLD
+exe "hi litebriteBoldGrey3" . s:GREY3 . s:BOLD
+exe "hi litebriteBoldGrey4" . s:GREY4 . s:BOLD
+exe "hi litebriteBoldGrey5" . s:GREY5 . s:BOLD
+exe "hi litebriteBoldGrey6" . s:GREY6 . s:BOLD
+exe "hi litebriteBoldGrey7" . s:GREY7 . s:BOLD
+exe "hi litebriteBoldGrey8" . s:GREY8 . s:BOLD
+exe "hi litebriteBoldGrey9" . s:GREY9 . s:BOLD
+exe "hi litebriteBoldGrey10" . s:GREY10 . s:BOLD
+exe "hi litebriteBoldGrey11" . s:GREY11 . s:BOLD
+exe "hi litebriteBoldGrey12" . s:GREY12 . s:BOLD
+exe "hi litebriteBoldGrey13" . s:GREY13 . s:BOLD
 
 " Italic
 exe "hi litebriteItalicBlue" . s:BLUE . s:ITALIC
@@ -112,6 +138,19 @@ exe "hi litebriteItalicRed" . s:RED . s:ITALIC
 exe "hi litebriteItalicTurquoise" . s:TURQUOISE . s:ITALIC
 exe "hi litebriteItalicWhite" . s:WHITE . s:ITALIC
 exe "hi litebriteItalicYellow" . s:YELLOW . s:ITALIC
+exe "hi litebriteItalicGrey1" . s:GREY1 . s:ITALIC
+exe "hi litebriteItalicGrey2" . s:GREY2 . s:ITALIC
+exe "hi litebriteItalicGrey3" . s:GREY3 . s:ITALIC
+exe "hi litebriteItalicGrey4" . s:GREY4 . s:ITALIC
+exe "hi litebriteItalicGrey5" . s:GREY5 . s:ITALIC
+exe "hi litebriteItalicGrey6" . s:GREY6 . s:ITALIC
+exe "hi litebriteItalicGrey7" . s:GREY7 . s:ITALIC
+exe "hi litebriteItalicGrey8" . s:GREY8 . s:ITALIC
+exe "hi litebriteItalicGrey9" . s:GREY9 . s:ITALIC
+exe "hi litebriteItalicGrey10" . s:GREY10 . s:ITALIC
+exe "hi litebriteItalicGrey11" . s:GREY11 . s:ITALIC
+exe "hi litebriteItalicGrey12" . s:GREY12 . s:ITALIC
+exe "hi litebriteItalicGrey13" . s:GREY13 . s:ITALIC
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Top level highlights
@@ -545,8 +584,12 @@ hi link lispKey litebriteFuchsia
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " twig
+" SEE: https://github.com/beyondwords/vim-twig
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi link twigBlockName litebriteOrange
+hi link twigTagDelim litebriteGrey13
 hi link twigSpecial litebriteYellow
-hi link twigVariable litebriteFuchsia
+hi link twigStatement litebritePurple
 hi link twigFilter litebriteGreen
+hi link twigBlockName litebriteBoldOrange
+hi link twigVariable litebriteFuchsia
+hi link twigNumber litebriteRed
