@@ -241,6 +241,16 @@ hi link netrwTreeBar litebriteWhite
 hi link netrwVersion litebriteBoldWhite
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Python
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi link pythonStatement litebriteRed
+hi link pythonBuiltin litebriteWhite
+hi link pythonConditional litebritePink
+hi link pythonOperator litebriteRed
+hi link pythonException litebriteRed
+hi link pythonInclude litebriteRed
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ruby
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi link rubyAccess litebritePurple
@@ -593,5 +603,5 @@ hi link twigSpecial litebriteYellow
 hi link twigStatement litebritePurple
 hi link twigTagBlock litebriteGrey13
 hi link twigTagDelim litebriteGrey13
-hi link twigVarBlock litebriteGrey13 
+hi link twigVarBlock litebriteGrey13
 hi link twigVariable litebriteFuchsia
