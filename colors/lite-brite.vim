@@ -152,6 +152,9 @@ exe "hi litebriteItalicGrey11" . s:GREY11 . s:ITALIC
 exe "hi litebriteItalicGrey12" . s:GREY12 . s:ITALIC
 exe "hi litebriteItalicGrey13" . s:GREY13 . s:ITALIC
 
+" TODO: Continue to abstract other commonly used patterns in to highlights.
+hi link litebriteConditional litebritePink
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Top level highlights
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -245,7 +248,7 @@ hi link netrwVersion litebriteBoldWhite
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi link pythonStatement litebriteRed
 hi link pythonBuiltin litebriteWhite
-hi link pythonConditional litebritePink
+hi link pythonConditional litebriteConditional
 hi link pythonOperator litebriteRed
 hi link pythonException litebriteRed
 hi link pythonInclude litebriteRed
@@ -259,7 +262,7 @@ hi link rubyBlockParameter litebriteOrange
 hi link rubyClass Keyword
 hi link rubyClassDeclaration Constant
 hi link rubyClassVariable litebriteOrange
-hi link rubyConditional litebritePink
+hi link rubyConditional litebriteConditional
 hi link rubyConstant Constant
 hi link rubyControl Keyword
 hi link rubyData Comment
@@ -358,7 +361,7 @@ hi link hamlTagName htmlTag
 " PHP
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-hi link phpConditional litebriteRed
+hi link phpConditional litebriteConditional
 hi link phpException litebriteRed
 hi link phpIdentifier litebriteWhite
 hi link phpInterfaces litebriteWhite
@@ -380,7 +383,7 @@ hi link phpMemberSelector phpOperator
 " C
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi link cCharacter litebriteTurquoise
-hi link cConditional litebriteRed
+hi link cConditional litebriteConditional
 hi link cDefine Comment
 hi link cInclude Comment
 hi link cIncluded litebriteBlue
@@ -391,13 +394,27 @@ hi link cStorageClass cType
 hi link cStructure litebriteYellow
 hi link cType litebritePurple
 hi link cUserLabel litebriteFuchsia
-hi link cppType cType
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " C++
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi link cppAccess cLabel
 hi link cppStructure cStructure
+hi link cppType cType
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Java
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi link javaType litebritePurple
+hi link javaExternal litebriteRed
+hi link javaScopeDecl litebriteFuchsia
+hi link javaMethodDecl litebriteFuchsia
+hi link javaStorageClass litebriteBlue
+hi link javaConditional litebriteConditional
+hi link javaTypeDef litebriteYellow
+hi link javaAnnotation litebriteGreen
+hi link javaStatement litebriteRed
+hi link javaExceptions litebriteRed
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CSS
@@ -471,7 +488,7 @@ hi link javaScriptNull litebriteOrange
 hi link javaScriptOperator litebriteRed
 hi link javaScriptRegexpString litebriteGreen
 hi link javaScriptStatement litebriteRed
-hi link javaScriptConditional litebriteRed
+hi link javaScriptConditional litebriteConditional
 hi link javaScriptMember litebriteYellow
 hi link javaScriptOperator litebriteYellow
 hi link javaScriptLabel litebriteFuchsia
@@ -556,7 +573,7 @@ hi link shEcho litebriteWhite
 hi link shDerefVarArray litebriteGreen
 hi link shDerefSimple litebriteWhite
 hi link shDeref litebriteWhite
-hi link shConditional litebriteRed
+hi link shConditional litebriteConditional
 hi link shCommandSub litebriteYellow
 hi link shCmdSubRegion litebriteWhite
 hi link shAlias Normal
