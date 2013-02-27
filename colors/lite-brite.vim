@@ -26,6 +26,7 @@ let s:PINK = " ctermfg=219 guifg=#ffafff"
 let s:PURPLE = " ctermfg=183 guifg=#d7afff"
 let s:RED = " ctermfg=210 guifg=#ff8787"
 let s:TURQUOISE = " ctermfg=45 guifg=#00ddff"
+let s:TEAL = " ctermfg=87 guifg=#5fffff"
 let s:WHITE = " ctermfg=15 guifg=#ffffff"
 let s:YELLOW = " ctermfg=227 guifg=#ffff5f"
 
@@ -86,6 +87,7 @@ exe "hi litebritePink" . s:PINK . s:NO_FORMAT
 exe "hi litebritePurple" . s:PURPLE . s:NO_FORMAT
 exe "hi litebriteRed" . s:RED . s:NO_FORMAT
 exe "hi litebriteTurquoise" . s:TURQUOISE . s:NO_FORMAT
+exe "hi litebriteTeal" . s:TEAL . s:NO_FORMAT
 exe "hi litebriteWhite" . s:WHITE . s:NO_FORMAT
 exe "hi litebriteYellow" . s:YELLOW . s:NO_FORMAT
 exe "hi litebriteGrey1" . s:GREY1 . s:NO_FORMAT
@@ -111,6 +113,7 @@ exe "hi litebriteBoldPink" . s:PINK . s:BOLD
 exe "hi litebriteBoldPurple" . s:PURPLE . s:BOLD
 exe "hi litebriteBoldRed" . s:RED . s:BOLD
 exe "hi litebriteBoldTurquoise" . s:TURQUOISE . s:BOLD
+exe "hi litebriteBoldTeal" . s:TEAL . s:BOLD
 exe "hi litebriteBoldWhite" . s:WHITE . s:BOLD
 exe "hi litebriteBoldYellow" . s:YELLOW . s:BOLD
 exe "hi litebriteBoldGrey1" . s:GREY1 . s:BOLD
@@ -136,6 +139,7 @@ exe "hi litebriteItalicPink" . s:PINK . s:ITALIC
 exe "hi litebriteItalicPurple" . s:PURPLE . s:ITALIC
 exe "hi litebriteItalicRed" . s:RED . s:ITALIC
 exe "hi litebriteItalicTurquoise" . s:TURQUOISE . s:ITALIC
+exe "hi litebriteItalicTeal" . s:TEAL . s:ITALIC
 exe "hi litebriteItalicWhite" . s:WHITE . s:ITALIC
 exe "hi litebriteItalicYellow" . s:YELLOW . s:ITALIC
 exe "hi litebriteItalicGrey1" . s:GREY1 . s:ITALIC
@@ -154,6 +158,7 @@ exe "hi litebriteItalicGrey13" . s:GREY13 . s:ITALIC
 
 " TODO: Continue to abstract other commonly used patterns in to highlights.
 hi link litebriteConditional litebritePink
+hi link litebriteEscapeChar litebriteBoldTeal
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Top level highlights
@@ -161,7 +166,7 @@ hi link litebriteConditional litebritePink
 " NOTE: `hi link`ing these does not work for some reason.
 exe "hi Normal" . s:WHITE . s:BLACK_BG . s:NO_FORMAT
 exe "hi Boolean" . s:ORANGE . s:NO_FORMAT
-exe "hi Character" . s:WHITE
+exe "hi Character" . s:TURQUOISE . s:NO_FORMAT
 exe "hi Comment" . s:GREY6 . s:ITALIC
 exe "hi Constant" . s:WHITE . s:BOLD
 exe "hi Delimiter" . s:NO_FORMAT
@@ -201,6 +206,7 @@ hi TablineSel ctermfg=248 ctermbg=236
 hi link PreProc Comment
 hi link Float Number
 hi link Identifier Normal
+hi link SpecialChar litebriteEscapeChar
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Viml
@@ -360,7 +366,6 @@ hi link hamlTagName htmlTag
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PHP
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 hi link phpConditional litebriteConditional
 hi link phpException litebriteRed
 hi link phpIdentifier litebriteWhite
@@ -415,6 +420,7 @@ hi link javaTypeDef litebriteYellow
 hi link javaAnnotation litebriteGreen
 hi link javaStatement litebriteRed
 hi link javaExceptions litebriteRed
+hi link javaCharacter litebriteTurquoise
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CSS
