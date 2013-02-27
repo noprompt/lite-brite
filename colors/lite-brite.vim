@@ -26,6 +26,7 @@ let s:PINK = " ctermfg=219 guifg=#ffafff"
 let s:PURPLE = " ctermfg=183 guifg=#d7afff"
 let s:RED = " ctermfg=210 guifg=#ff8787"
 let s:TURQUOISE = " ctermfg=45 guifg=#00ddff"
+let s:TEAL = " ctermfg=87 guifg=#5fffff"
 let s:WHITE = " ctermfg=15 guifg=#ffffff"
 let s:YELLOW = " ctermfg=227 guifg=#ffff5f"
 
@@ -86,6 +87,7 @@ exe "hi litebritePink" . s:PINK . s:NO_FORMAT
 exe "hi litebritePurple" . s:PURPLE . s:NO_FORMAT
 exe "hi litebriteRed" . s:RED . s:NO_FORMAT
 exe "hi litebriteTurquoise" . s:TURQUOISE . s:NO_FORMAT
+exe "hi litebriteTeal" . s:TEAL . s:NO_FORMAT
 exe "hi litebriteWhite" . s:WHITE . s:NO_FORMAT
 exe "hi litebriteYellow" . s:YELLOW . s:NO_FORMAT
 exe "hi litebriteGrey1" . s:GREY1 . s:NO_FORMAT
@@ -111,6 +113,7 @@ exe "hi litebriteBoldPink" . s:PINK . s:BOLD
 exe "hi litebriteBoldPurple" . s:PURPLE . s:BOLD
 exe "hi litebriteBoldRed" . s:RED . s:BOLD
 exe "hi litebriteBoldTurquoise" . s:TURQUOISE . s:BOLD
+exe "hi litebriteBoldTeal" . s:TEAL . s:BOLD
 exe "hi litebriteBoldWhite" . s:WHITE . s:BOLD
 exe "hi litebriteBoldYellow" . s:YELLOW . s:BOLD
 exe "hi litebriteBoldGrey1" . s:GREY1 . s:BOLD
@@ -136,6 +139,7 @@ exe "hi litebriteItalicPink" . s:PINK . s:ITALIC
 exe "hi litebriteItalicPurple" . s:PURPLE . s:ITALIC
 exe "hi litebriteItalicRed" . s:RED . s:ITALIC
 exe "hi litebriteItalicTurquoise" . s:TURQUOISE . s:ITALIC
+exe "hi litebriteItalicTeal" . s:TEAL . s:ITALIC
 exe "hi litebriteItalicWhite" . s:WHITE . s:ITALIC
 exe "hi litebriteItalicYellow" . s:YELLOW . s:ITALIC
 exe "hi litebriteItalicGrey1" . s:GREY1 . s:ITALIC
@@ -152,13 +156,17 @@ exe "hi litebriteItalicGrey11" . s:GREY11 . s:ITALIC
 exe "hi litebriteItalicGrey12" . s:GREY12 . s:ITALIC
 exe "hi litebriteItalicGrey13" . s:GREY13 . s:ITALIC
 
+" TODO: Continue to abstract other commonly used patterns in to highlights.
+hi link litebriteConditional litebritePink
+hi link litebriteEscapeChar litebriteBoldTeal
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Top level highlights
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NOTE: `hi link`ing these does not work for some reason.
 exe "hi Normal" . s:WHITE . s:BLACK_BG . s:NO_FORMAT
 exe "hi Boolean" . s:ORANGE . s:NO_FORMAT
-exe "hi Character" . s:WHITE
+exe "hi Character" . s:TURQUOISE . s:NO_FORMAT
 exe "hi Comment" . s:GREY6 . s:ITALIC
 exe "hi Constant" . s:WHITE . s:BOLD
 exe "hi Delimiter" . s:NO_FORMAT
@@ -198,6 +206,7 @@ hi TablineSel ctermfg=248 ctermbg=236
 hi link PreProc Comment
 hi link Float Number
 hi link Identifier Normal
+hi link SpecialChar litebriteEscapeChar
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Viml
@@ -241,6 +250,16 @@ hi link netrwTreeBar litebriteWhite
 hi link netrwVersion litebriteBoldWhite
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Python
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi link pythonStatement litebriteRed
+hi link pythonBuiltin litebriteWhite
+hi link pythonConditional litebriteConditional
+hi link pythonOperator litebriteRed
+hi link pythonException litebriteRed
+hi link pythonInclude litebriteRed
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ruby
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi link rubyAccess litebritePurple
@@ -249,7 +268,7 @@ hi link rubyBlockParameter litebriteOrange
 hi link rubyClass Keyword
 hi link rubyClassDeclaration Constant
 hi link rubyClassVariable litebriteOrange
-hi link rubyConditional litebritePink
+hi link rubyConditional litebriteConditional
 hi link rubyConstant Constant
 hi link rubyControl Keyword
 hi link rubyData Comment
@@ -347,8 +366,7 @@ hi link hamlTagName htmlTag
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PHP
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-hi link phpConditional litebriteRed
+hi link phpConditional litebriteConditional
 hi link phpException litebriteRed
 hi link phpIdentifier litebriteWhite
 hi link phpInterfaces litebriteWhite
@@ -373,7 +391,7 @@ hi link phpMethodsVar litebriteBoldWhite
 " C
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi link cCharacter litebriteTurquoise
-hi link cConditional litebriteRed
+hi link cConditional litebriteConditional
 hi link cDefine Comment
 hi link cInclude Comment
 hi link cIncluded litebriteBlue
@@ -384,13 +402,28 @@ hi link cStorageClass cType
 hi link cStructure litebriteYellow
 hi link cType litebritePurple
 hi link cUserLabel litebriteFuchsia
-hi link cppType cType
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " C++
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi link cppAccess cLabel
 hi link cppStructure cStructure
+hi link cppType cType
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Java
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi link javaType litebritePurple
+hi link javaExternal litebriteRed
+hi link javaScopeDecl litebriteFuchsia
+hi link javaMethodDecl litebriteFuchsia
+hi link javaStorageClass litebriteBlue
+hi link javaConditional litebriteConditional
+hi link javaTypeDef litebriteYellow
+hi link javaAnnotation litebriteGreen
+hi link javaStatement litebriteRed
+hi link javaExceptions litebriteRed
+hi link javaCharacter litebriteTurquoise
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CSS
@@ -464,7 +497,7 @@ hi link javaScriptNull litebriteOrange
 hi link javaScriptOperator litebriteRed
 hi link javaScriptRegexpString litebriteGreen
 hi link javaScriptStatement litebriteRed
-hi link javaScriptConditional litebriteRed
+hi link javaScriptConditional litebriteConditional
 hi link javaScriptMember litebriteYellow
 hi link javaScriptOperator litebriteYellow
 hi link javaScriptLabel litebriteFuchsia
@@ -549,7 +582,7 @@ hi link shEcho litebriteWhite
 hi link shDerefVarArray litebriteGreen
 hi link shDerefSimple litebriteWhite
 hi link shDeref litebriteWhite
-hi link shConditional litebriteRed
+hi link shConditional litebriteConditional
 hi link shCommandSub litebriteYellow
 hi link shCmdSubRegion litebriteWhite
 hi link shAlias Normal
@@ -596,5 +629,5 @@ hi link twigSpecial litebriteYellow
 hi link twigStatement litebritePurple
 hi link twigTagBlock litebriteGrey13
 hi link twigTagDelim litebriteGrey13
-hi link twigVarBlock litebriteGrey13 
+hi link twigVarBlock litebriteGrey13
 hi link twigVariable litebriteFuchsia
