@@ -11,6 +11,15 @@ endif
 
 let g:colors_name = "LiteBrite"
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" To fix gutter color when using vim-gitgutter plugin
+" https://github.com/airblade/vim-gitgutter
+highlight clear SignColumn
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color variables
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
