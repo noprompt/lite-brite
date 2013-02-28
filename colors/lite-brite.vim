@@ -386,15 +386,12 @@ hi link phpSpecialFunction litebriteYellow
 hi link phpStatement litebriteRed
 hi link phpStorageClass litebritePurple
 hi link phpType litebritePurple
+hi link phpVarSelector litebriteWhite
 hi link phpFunctions Function
 hi link phpDefine Function
 hi link phpRelation phpOperator
 hi link phpComparison phpOperator
 hi link phpMemberSelector phpOperator
-
-hi link phpVarSelector litebritePurple
-hi link phpIdentifier litebritePurple
-hi link phpMethodsVar litebriteBoldWhite
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " C
