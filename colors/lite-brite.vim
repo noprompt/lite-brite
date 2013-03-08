@@ -543,6 +543,7 @@ hi link javaScriptOperator litebriteYellow
 hi link javaScriptRegexpString litebriteRegex
 hi link javaScriptRegexpCharClass litebriteRegexRange
 hi link javaScriptStatement litebriteRed
+hi link javaScriptSpecial litebriteEscapeChar
 hi link javaScriptType litebritePurple
 hi link javascriptNumber Number
 
