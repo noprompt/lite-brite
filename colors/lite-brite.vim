@@ -169,6 +169,9 @@ exe "hi litebriteItalicGrey13" . s:GREY13 . s:ITALIC
 hi link litebriteConditional litebritePink
 hi link litebriteEscapeChar litebriteBoldTeal
 hi link litebriteRegex litebriteGreen
+hi link litebriteRegexDelim litebriteBoldGreen
+hi link litebriteRegexRange litebriteBlue
+hi link litebriteRegexSep litebriteYellow
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Top level highlights
@@ -226,6 +229,8 @@ hi link vimAutoCmd litebritePurple
 hi link vimAutoEvent litebritePink
 hi link vimCommentTitle Todo
 hi link vimContinue litebriteWhite
+" Not sure why this doesn't work.
+hi link vimCollection litebriteRegexRange
 hi link vimFuncSID litebriteYellow
 hi link vimFunction litebriteWhite
 hi link vimGroup litebriteWhite
@@ -239,12 +244,14 @@ hi link vimMap litebritePurple
 hi link vimMapModKey litebriteYellow
 hi link vimNotation litebriteYellow
 hi link vimOper litebriteWhite
-hi link vimPatSep litebriteConditional
-hi link vimPatSepR litebriteRed
+hi link vimPatSep litebriteRegexSep
+" This helps with \(\) madness.
+hi link vimPatSepR litebriteRegexSep
 hi link vimSetSep litebriteWhite
 hi link vimSubstDelim litebriteRegex
 hi link vimSubstPat litebriteRegex
-hi link vimSynPatRange litebriteRed
+hi link vimSynPatRange litebriteRegexRange
+hi link vimSynReg litebriteRed
 hi link vimSynRegPat litebriteRegex
 hi link vimSynType litebritePurple
 hi link vimSyntax litebriteFuchsia
@@ -311,10 +318,15 @@ hi link rubyPredefinedVariable litebriteYellow
 hi link rubyPseudoVariable litebriteWhite
 hi link rubyPseudoVariable litebriteYellow
 hi link rubyRailsUserClass Constant
-hi link rubyRegexp litebriteGreen
-hi link rubyRegexpDelimiter rubyRegexp
+hi link rubyRegexp litebriteRegex
+hi link rubyRegexpDelimiter litebriteRegexDelim
+hi link rubyRegexpCharClass litebriteRegexRange
+hi link rubyRegexpBrackets litebriteRegexRange
+hi link rubyRegexpSpecial litebriteRegexSep
+hi link rubyRegexpQuantifier litebriteWhite
 hi link rubySharpBang Comment
 hi link rubyStringDelimiter String
+hi link rubyStringEscape litebriteEscapeChar
 hi link rubySymbol litebriteFuchsia
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -514,23 +526,24 @@ hi link sassClassChar sassClass
 " JavaScript
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi link javaScript litebriteWhite
-hi link javaScriptIdentifier litebritePurple
-hi link javaScriptType litebritePurple
-hi link javaScriptNull litebriteOrange
-hi link javaScriptOperator litebriteRed
-hi link javaScriptRegexpString litebriteGreen
-hi link javaScriptStatement litebriteRed
-hi link javaScriptConditional litebriteConditional
-hi link javaScriptMember litebriteYellow
-hi link javaScriptOperator litebriteYellow
-hi link javaScriptLabel litebriteFuchsia
-hi link javaScriptBranch litebriteRed
-hi link javaScriptExceptions litebriteWhiteBold
-hi link javaScriptFutureKeys litebriteFuchsia
 hi link javaScriptBraces Normal
+hi link javaScriptBranch litebriteRed
+hi link javaScriptConditional litebriteConditional
+hi link javaScriptExceptions litebriteWhiteBold
 hi link javaScriptFunction Function
+hi link javaScriptFutureKeys litebriteFuchsia
 hi link javaScriptGlobal Constant
 hi link javaScriptGlobalObjects Constant
+hi link javaScriptIdentifier litebritePurple
+hi link javaScriptLabel litebriteFuchsia
+hi link javaScriptMember litebriteYellow
+hi link javaScriptNull litebriteOrange
+hi link javaScriptOperator litebriteRed
+hi link javaScriptOperator litebriteYellow
+hi link javaScriptRegexpString litebriteRegex
+hi link javaScriptRegexpCharClass litebriteRegexRange
+hi link javaScriptStatement litebriteRed
+hi link javaScriptType litebritePurple
 hi link javascriptNumber Number
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -590,6 +603,7 @@ hi link clojureVariable litebriteBoldWhite
 hi link clojureQuote litebriteBoldRed
 hi link clojureDispatch litebriteBoldRed
 hi link clojureDeref litebriteBoldRed
+hi link clojureAnonArg litebriteBoldRed
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Shell
