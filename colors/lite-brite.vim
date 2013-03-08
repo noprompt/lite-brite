@@ -168,6 +168,7 @@ exe "hi litebriteItalicGrey13" . s:GREY13 . s:ITALIC
 " TODO: Continue to abstract other commonly used patterns in to highlights.
 hi link litebriteConditional litebritePink
 hi link litebriteEscapeChar litebriteBoldTeal
+hi link litebriteRegex litebriteGreen
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Top level highlights
@@ -238,12 +239,28 @@ hi link vimMap litebritePurple
 hi link vimMapModKey litebriteYellow
 hi link vimNotation litebriteYellow
 hi link vimOper litebriteWhite
+hi link vimPatSep litebriteConditional
+hi link vimPatSepR litebriteRed
 hi link vimSetSep litebriteWhite
-hi link vimSubstDelim litebriteGreen
-hi link vimSubstPat litebriteGreen
+hi link vimSubstDelim litebriteRegex
+hi link vimSubstPat litebriteRegex
+hi link vimSynPatRange litebriteRed
+hi link vimSynRegPat litebriteRegex
 hi link vimSynType litebritePurple
 hi link vimSyntax litebriteFuchsia
 hi link vimVar litebriteWhite
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" help
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+exec "hi helpHyperTextJump " . s:UNDERLINE . s:NO_BG . s:BLUE
+hi link helpExample litebriteWhite
+hi link helpHeader litebriteWhite
+hi link helpHyperTextEntry litebriteGreen
+hi link helpNote litebriteFuchsia
+hi link helpSectionDelim litebriteGrey5
+hi link helpSpecial litebriteYellow
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " netrw
@@ -570,6 +587,9 @@ hi link clojureKeyword litebriteFuchsia
 hi link clojureMacro litebriteYellow
 hi link clojurePattern litebriteGreen
 hi link clojureVariable litebriteBoldWhite
+hi link clojureQuote litebriteBoldRed
+hi link clojureDispatch litebriteBoldRed
+hi link clojureDeref litebriteBoldRed
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Shell
