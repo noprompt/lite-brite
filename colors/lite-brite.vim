@@ -221,6 +221,7 @@ exe "hi StatusLineNC" . s:BLACK . s:GREY4_BG
 exe "hi Tabline" . s:GREY10 . s:GREY3_BG . s:NO_FORMAT
 exe "hi TablineFill" . s:GREY1 . s:NO_FORMAT
 hi TablineSel ctermfg=248 ctermbg=236
+hi Conceal ctermfg=202 guifg=#FF8800 ctermbg=0 guibg=#000000 cterm=bold gui=bold
 
 hi link PreProc Comment
 hi link Float Number
@@ -240,7 +241,7 @@ hi link vimCollection litebriteRegexpCharClass
 hi link vimFuncSID litebriteYellow
 hi link vimFunction litebriteWhite
 hi link vimGroup litebriteWhite
-hi link vimHiAttrib litebriteGreen
+hi link vimHiAttrib litebriteYellow
 hi link vimHiCterm litebriteFuchsia
 hi link vimHiCtermFgBg litebriteFuchsia
 hi link vimHiGui litebriteFuchsia
@@ -266,7 +267,6 @@ hi link vimVar litebriteWhite
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " help
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 exec "hi helpHyperTextJump " . s:UNDERLINE . s:NO_BG . s:BLUE
 hi link helpExample litebriteWhite
 hi link helpHeader litebriteWhite
@@ -365,7 +365,6 @@ exe "hi htmlItalic" . s:ITALIC
 exe "hi htmlUnderline" . s:UNDERLINE
 exe "hi htmlItalicUnderline" . s:ITALIC_UNDERLINE
 exe "hi htmlTitle" . s:BOLD
-
 hi link htmlArg litebriteFuchsia
 hi link htmlH litebriteBoldWhite
 hi link htmlTag litebriteBlue
@@ -397,7 +396,6 @@ hi link xmlEndTag htmlTagN
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " HAML
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 hi link hamlIdChar cssIdentifier
 hi link hamlId cssIdentifier
 hi link hamlClassChar cssClassName
