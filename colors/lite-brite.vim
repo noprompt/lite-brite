@@ -165,13 +165,18 @@ exe "hi litebriteItalicGrey11" . s:GREY11 . s:ITALIC
 exe "hi litebriteItalicGrey12" . s:GREY12 . s:ITALIC
 exe "hi litebriteItalicGrey13" . s:GREY13 . s:ITALIC
 
-" TODO: Continue to abstract other commonly used patterns in to highlights.
-hi link litebriteConditional litebritePink
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Highlights for common syntax types.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi link litebriteEscapeChar litebriteBoldTeal
-hi link litebriteRegex litebriteGreen
-hi link litebriteRegexDelim litebriteBoldGreen
-hi link litebriteRegexRange litebriteBlue
-hi link litebriteRegexSep litebriteYellow
+hi link litebriteRegexp litebriteGreen
+hi link litebriteRegexpBackRef Special
+hi link litebriteRegexpBoundary litebriteYellow
+hi link litebriteRegexpCharClass litebriteBlue
+hi link litebriteRegexpDelim litebriteBoldGreen
+hi link litebriteRegexpMod Special
+hi link litebriteRegexpQuantifier litebriteWhite
+hi link litebriteRegexpSep litebriteYellow
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Top level highlights
@@ -182,6 +187,7 @@ exe "hi Boolean" . s:ORANGE . s:NO_FORMAT
 exe "hi Character" . s:TURQUOISE . s:NO_FORMAT
 exe "hi Comment" . s:GREY6 . s:ITALIC
 exe "hi Constant" . s:WHITE . s:BOLD
+exe "hi Conditional" . s:PINK . s:NO_FORMAT
 exe "hi Delimiter" . s:NO_FORMAT
 exe "hi Function" . s:BLUE . s:NO_FORMAT
 exe "hi Keyword" . s:RED . s:NO_FORMAT
@@ -230,7 +236,7 @@ hi link vimAutoEvent litebritePink
 hi link vimCommentTitle Todo
 hi link vimContinue litebriteWhite
 " Not sure why this doesn't work.
-hi link vimCollection litebriteRegexRange
+hi link vimCollection litebriteRegexpCharClass
 hi link vimFuncSID litebriteYellow
 hi link vimFunction litebriteWhite
 hi link vimGroup litebriteWhite
@@ -244,15 +250,15 @@ hi link vimMap litebritePurple
 hi link vimMapModKey litebriteYellow
 hi link vimNotation litebriteYellow
 hi link vimOper litebriteWhite
-hi link vimPatSep litebriteRegexSep
+hi link vimPatSep litebriteRegexpSep
 " This helps with \(\) madness.
-hi link vimPatSepR litebriteRegexSep
+hi link vimPatSepR litebriteRegexpSep
 hi link vimSetSep litebriteWhite
-hi link vimSubstDelim litebriteRegex
-hi link vimSubstPat litebriteRegex
-hi link vimSynPatRange litebriteRegexRange
+hi link vimSubstDelim litebriteRegexp
+hi link vimSubstPat litebriteRegexp
+hi link vimSynPatRange litebriteRegexpCharClass
 hi link vimSynReg litebriteRed
-hi link vimSynRegPat litebriteRegex
+hi link vimSynRegPat litebriteRegexp
 hi link vimSynType litebritePurple
 hi link vimSyntax litebriteFuchsia
 hi link vimVar litebriteWhite
@@ -287,7 +293,6 @@ hi link netrwVersion litebriteBoldWhite
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi link pythonStatement litebriteRed
 hi link pythonBuiltin litebriteWhite
-hi link pythonConditional litebriteConditional
 hi link pythonOperator litebriteRed
 hi link pythonException litebriteRed
 hi link pythonInclude litebriteRed
@@ -301,7 +306,6 @@ hi link rubyBlockParameter litebriteOrange
 hi link rubyClass Keyword
 hi link rubyClassDeclaration Constant
 hi link rubyClassVariable litebriteOrange
-hi link rubyConditional litebriteConditional
 hi link rubyConstant Constant
 hi link rubyControl Keyword
 hi link rubyData Comment
@@ -318,11 +322,11 @@ hi link rubyPredefinedVariable litebriteYellow
 hi link rubyPseudoVariable litebriteWhite
 hi link rubyPseudoVariable litebriteYellow
 hi link rubyRailsUserClass Constant
-hi link rubyRegexp litebriteRegex
-hi link rubyRegexpDelimiter litebriteRegexDelim
-hi link rubyRegexpCharClass litebriteRegexRange
-hi link rubyRegexpBrackets litebriteRegexRange
-hi link rubyRegexpSpecial litebriteRegexSep
+hi link rubyRegexp litebriteRegexp
+hi link rubyRegexpDelimiter litebriteRegexpDelim
+hi link rubyRegexpCharClass litebriteRegexpCharClass
+hi link rubyRegexpBrackets litebriteRegexpCharClass
+hi link rubyRegexpSpecial litebriteRegexpSep
 hi link rubyRegexpQuantifier litebriteWhite
 hi link rubySharpBang Comment
 hi link rubyStringDelimiter String
@@ -404,7 +408,6 @@ hi link hamlTagName htmlTag
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PHP
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi link phpConditional litebriteConditional
 hi link phpException litebriteRed
 hi link phpIdentifier litebriteWhite
 hi link phpInterfaces litebriteWhite
@@ -426,7 +429,6 @@ hi link phpMemberSelector phpOperator
 " C
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi link cCharacter litebriteTurquoise
-hi link cConditional litebriteConditional
 hi link cDefine Comment
 hi link cInclude Comment
 hi link cIncluded litebriteBlue
@@ -453,7 +455,6 @@ hi link javaExternal litebriteRed
 hi link javaScopeDecl litebriteFuchsia
 hi link javaMethodDecl litebriteFuchsia
 hi link javaStorageClass litebriteBlue
-hi link javaConditional litebriteConditional
 hi link javaTypeDef litebriteYellow
 hi link javaAnnotation litebriteGreen
 hi link javaStatement litebriteRed
@@ -528,7 +529,6 @@ hi link sassClassChar sassClass
 hi link javaScript litebriteWhite
 hi link javaScriptBraces Normal
 hi link javaScriptBranch litebriteRed
-hi link javaScriptConditional litebriteConditional
 hi link javaScriptExceptions litebriteWhiteBold
 hi link javaScriptFunction Function
 hi link javaScriptFutureKeys litebriteFuchsia
@@ -540,8 +540,8 @@ hi link javaScriptMember litebriteYellow
 hi link javaScriptNull litebriteOrange
 hi link javaScriptOperator litebriteRed
 hi link javaScriptOperator litebriteYellow
-hi link javaScriptRegexpString litebriteRegex
-hi link javaScriptRegexpCharClass litebriteRegexRange
+hi link javaScriptRegexpString litebriteRegexp
+hi link javaScriptRegexpCharClass litebriteRegexpCharClass
 hi link javaScriptStatement litebriteRed
 hi link javaScriptSpecial litebriteEscapeChar
 hi link javaScriptType litebritePurple
@@ -595,16 +595,26 @@ hi link smlEncl smlKeyChar
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Clojure
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi link clojureAnonArg litebriteBoldRed
 hi link clojureCharacter String
 hi link clojureDefine litebriteBlue
+hi link clojureDeref litebriteBoldRed
+hi link clojureDispatch litebriteBoldRed
 hi link clojureKeyword litebriteFuchsia
 hi link clojureMacro litebriteYellow
 hi link clojurePattern litebriteGreen
-hi link clojureVariable litebriteBoldWhite
 hi link clojureQuote litebriteBoldRed
-hi link clojureDispatch litebriteBoldRed
-hi link clojureDeref litebriteBoldRed
-hi link clojureAnonArg litebriteBoldRed
+hi link clojureRegexp litebriteRegexp
+hi link clojureRegexpBackRef litebriteRegexpBackRef
+hi link clojureRegexpBoundary litebriteRegexpBoundary
+hi link clojureRegexpCharClass Special
+hi link clojureRegexpMod litebriteRegexpMod
+hi link clojureRegexpOr Conditional
+hi link clojureRegexpPosixCharClass litebriteRegexpCharClass
+hi link clojureRegexpPredefinedCharClass litebriteRegexpCharClass
+hi link clojureRegexpQuantifier litebriteRegexpQuantifier
+hi link clojureRegexpSpecialChar SpecialChar
+hi link clojureVariable litebriteBoldWhite
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Shell
@@ -623,7 +633,6 @@ hi link shEcho litebriteWhite
 hi link shDerefVarArray litebriteGreen
 hi link shDerefSimple litebriteWhite
 hi link shDeref litebriteWhite
-hi link shConditional litebriteConditional
 hi link shCommandSub litebriteYellow
 hi link shCmdSubRegion litebriteWhite
 hi link shAlias Normal
