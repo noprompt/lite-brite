@@ -3,7 +3,7 @@
 " URI: https://github.com/noprompt/lite-brite
 
 set background=dark
-hi clear
+highlight clear
 
 if exists("syntax_on")
   syntax reset
@@ -11,18 +11,12 @@ endif
 
 let g:colors_name = "LiteBrite"
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Configuration settings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " To fix gutter color when using vim-gitgutter plugin
 " https://github.com/airblade/vim-gitgutter
 highlight clear SignColumn
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Color variables
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Color variables {{{
+
 let s:NO_FG = " ctermfg=NONE guifg=NONE"
 let s:NO_BG = " ctermbg=NONE guibg=NONE"
 
@@ -69,11 +63,12 @@ let s:GREY11_BG = " ctermbg=243 guibg=#767676"
 let s:GREY12_BG = " ctermbg=244 guibg=#808080"
 let s:GREY13_BG = " ctermbg=245 guibg=#8a8a8a"
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Formatting variables
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Formatting variables {{{
+
 " NOTE: Italics generally aren't suppored in the terminal so cterm italics are
 " skipped.
+
 let s:REVERSE = " cterm=reverse gui=reverse"
 let s:BOLD = " cterm=bold gui=bold"
 let s:ITALIC = " gui=italic"
@@ -84,9 +79,9 @@ let s:BOLD_ITALIC_UNDERLINE = " cterm=bold,underline gui=bold,italic,underline"
 let s:ITALIC_UNDERLINE = " cterm=underline gui=italic,underline"
 let s:NO_FORMAT = " cterm=NONE gui=NONE"
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" LiteBrite highlights
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" LiteBrite highlights  {{{
+
 " Normal
 exe "hi litebriteBlue" . s:BLUE . s:NO_FORMAT
 exe "hi litebriteFuchsia" . s:FUCHSIA . s:NO_FORMAT
@@ -165,9 +160,7 @@ exe "hi litebriteItalicGrey11" . s:GREY11 . s:ITALIC
 exe "hi litebriteItalicGrey12" . s:GREY12 . s:ITALIC
 exe "hi litebriteItalicGrey13" . s:GREY13 . s:ITALIC
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlights for common syntax types.
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi link litebriteEscapeChar litebriteBoldTeal
 hi link litebriteRegexp litebriteGreen
 hi link litebriteRegexpBackRef Special
@@ -178,9 +171,9 @@ hi link litebriteRegexpMod Special
 hi link litebriteRegexpQuantifier litebriteWhite
 hi link litebriteRegexpSep litebriteYellow
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Top level highlights
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Top level highlights {{{
+
 " NOTE: `hi link`ing these does not work for some reason.
 exe "hi Normal" . s:WHITE . s:BLACK_BG . s:NO_FORMAT
 exe "hi Boolean" . s:ORANGE . s:NO_FORMAT
@@ -228,9 +221,9 @@ hi link Float Number
 hi link Identifier Normal
 hi link SpecialChar litebriteEscapeChar
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Viml
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" vim {{{
+
 hi link vimAddress litebriteYellow
 hi link vimAutoCmd litebritePurple
 hi link vimAutoEvent litebritePink
@@ -264,20 +257,20 @@ hi link vimSynType litebritePurple
 hi link vimSyntax litebriteFuchsia
 hi link vimVar litebriteWhite
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" help
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" help {{{
+
 exec "hi helpHyperTextJump " . s:UNDERLINE . s:NO_BG . s:BLUE
 hi link helpExample litebriteWhite
 hi link helpHeader litebriteWhite
 hi link helpHyperTextEntry litebriteGreen
-hi link helpNote litebriteFuchsia
+hi link helpNote Todo
 hi link helpSectionDelim litebriteGrey5
 hi link helpSpecial litebriteYellow
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" netrw
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" netrw {{{
+
 hi link netrwClassify litebriteBoldWhite
 hi link netrwCmdSep litebriteWhite
 hi link netrwDir litebriteBlue
@@ -288,18 +281,18 @@ hi link netrwQuickHelp litebriteYellow
 hi link netrwTreeBar litebriteWhite
 hi link netrwVersion litebriteBoldWhite
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Python
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" python {{{
+
 hi link pythonStatement litebriteRed
 hi link pythonBuiltin litebriteWhite
 hi link pythonOperator litebriteRed
 hi link pythonException litebriteRed
 hi link pythonInclude litebriteRed
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ruby
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" ruby {{{
+
 hi link rubyAccess litebritePurple
 hi link rubyAttribute litebriteBlue
 hi link rubyBlockParameter litebriteOrange
@@ -333,17 +326,9 @@ hi link rubyStringDelimiter String
 hi link rubyStringEscape litebriteEscapeChar
 hi link rubySymbol litebriteFuchsia
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" YAML
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi link yamlBlockMappingKey litebriteFuchsia
-hi link yamlKeyValueDelimiter litebriteFuchsia
-hi link yamlFlowIndicator litebriteWhite
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YARD
 " SEE: https://github.com/noprompt/vim-yardoc
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 exec "hi yardArrow" . s:GREY8 . s:NO_FORMAT
 exec "hi yardComma" . s:GREY8 . s:NO_FORMAT
 exec "hi yardDuckType" . s:GREY8 . s:NO_FORMAT
@@ -354,9 +339,16 @@ exec "hi yardParametricType" . s:GREY8. s:NO_FORMAT
 exec "hi yardType" . s:GREY8. s:BOLD
 exec "hi yardTypeList" . s:GREY8 . s:NO_FORMAT
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" HTML
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" yaml {{{
+
+hi link yamlBlockMappingKey litebriteFuchsia
+hi link yamlKeyValueDelimiter litebriteFuchsia
+hi link yamlFlowIndicator litebriteWhite
+
+" }}}
+" html {{{
+
 exe "hi htmlBold" . s:BOLD
 exe "hi htmlBoldItalic" . s:BOLD_ITALIC
 exe "hi htmlBoldItalicUnderline" . s:BOLD_ITALIC_UNDERLINE
@@ -387,15 +379,15 @@ hi link htmlUnderlineBoldItalic htmlBoldUnderlineItalic
 hi link htmlUnderlineItalic htmlItalicUnderline
 hi link htmlUnderlineItalicBold htmlBoldUnderlineItalic
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" XML
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" xml {{{
+
 hi link xmlAttrib htmlArg
 hi link xmlEndTag htmlTagN
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" HAML
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" haml {{{
+
 hi link hamlIdChar cssIdentifier
 hi link hamlId cssIdentifier
 hi link hamlClassChar cssClassName
@@ -403,9 +395,9 @@ hi link hamlClass cssClassName
 hi link hamlTag htmlTag
 hi link hamlTagName htmlTag
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PHP
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" php  {{{
+
 hi link phpException litebriteRed
 hi link phpIdentifier litebriteWhite
 hi link phpInterfaces litebriteWhite
@@ -423,9 +415,23 @@ hi link phpRelation phpOperator
 hi link phpComparison phpOperator
 hi link phpMemberSelector phpOperator
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" C
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" twig {{{
+" SEE: https://github.com/beyondwords/vim-twig
+
+hi link twigBlockName litebriteBoldOrange
+hi link twigFilter litebriteGreen
+hi link twigNumber litebriteRed
+hi link twigSpecial litebriteYellow
+hi link twigStatement litebritePurple
+hi link twigTagBlock litebriteGrey13
+hi link twigTagDelim litebriteGrey13
+hi link twigVarBlock litebriteGrey13
+hi link twigVariable litebriteFuchsia
+
+" }}}
+" c {{{
+
 hi link cCharacter litebriteTurquoise
 hi link cDefine Comment
 hi link cInclude Comment
@@ -438,16 +444,16 @@ hi link cStructure litebriteYellow
 hi link cType litebritePurple
 hi link cUserLabel litebriteFuchsia
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" C++
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" cpp {{{
+
 hi link cppAccess cLabel
 hi link cppStructure cStructure
 hi link cppType cType
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Java
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" java {{{
+
 hi link javaType litebritePurple
 hi link javaExternal litebriteRed
 hi link javaScopeDecl litebriteFuchsia
@@ -459,9 +465,9 @@ hi link javaStatement litebriteRed
 hi link javaExceptions litebriteRed
 hi link javaCharacter litebriteTurquoise
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CSS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" css {{{
+
 hi link cssAuralAttr litebriteWhite
 hi link cssBoxAttr litebriteWhite
 hi link cssClassName litebriteYellow
@@ -508,9 +514,9 @@ hi link cssValueLength cssValue
 hi link cssValueNumber cssValue
 hi link cssValueTime cssValue
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sass
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" sass {{{
+
 hi link sassVariable litebriteOrange
 hi link sassMixing litebriteBlue
 hi link sassInclude litebriteBlue
@@ -521,9 +527,9 @@ hi link sassClass     cssClassName
 hi link sassIdChar    sassId
 hi link sassClassChar sassClass
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" JavaScript
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" javascript {{{
+
 hi link javaScript litebriteWhite
 hi link javaScriptBraces Normal
 hi link javaScriptBranch litebriteRed
@@ -545,9 +551,9 @@ hi link javaScriptSpecial litebriteEscapeChar
 hi link javaScriptType litebritePurple
 hi link javascriptNumber Number
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CoffeeScript
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" coffeescript {{{
+
 exe "hi coffeeSpaceError" . s:NO_FG . s:NO_BG
 hi link coffeeSpecialIdent litebriteOrange
 hi link coffeeSpecialVar litebriteYellow
@@ -561,9 +567,9 @@ hi link coffeeCurly litebriteWhite
 hi link coffeeCurlies litebriteWhite
 hi link coffeeExtendedOp litebriteWhite
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Livescript
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" livescript {{{
+
 hi link lsSpaceError coffeeSpaceError
 hi link lsIdentifier litebriteWhite
 hi link lsRegex litebriteGreen
@@ -571,9 +577,9 @@ hi link lsInfixFunc litebriteRed
 hi link lsProp litebriteFuchsia
 hi link lsVarInterpolation litebriteWhite
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Haskell
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" haskell {{{
+
 hi link hsCharacter String
 hi link hsStatement litebriteRed
 hi link hsStructure litebriteYellow
@@ -581,18 +587,30 @@ hi link hsImport litebriteBlue
 hi link hsImportMod litebritePink
 hi link ConId litebriteBoldWhite
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Standard ML
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" sml {{{
+
 hi link smlModPath litebriteBoldWhite
 hi link smlKeyWord litebriteBlue
 hi link smlKeyChar litebriteWhite
 hi link smlCharacter litebritePurple
 hi link smlEncl smlKeyChar
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Clojure
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" lisp {{{
+
+hi link lispAtom litebriteWhite
+hi link lispAtomList litebriteWhite
+hi link lispAtomMark litebriteRed
+hi link lispDecl litebriteRed
+hi link lispEscapeSpecial litebriteBoldWhite
+hi link lispFunc litebriteBlue
+hi link lispKey litebriteFuchsia
+
+" }}}
+" clojure {{{
+" SEE: https://github.com/guns/vim-clojure-static
+
 hi link clojureAnonArg litebriteBoldRed
 hi link clojureCharacter String
 hi link clojureDefine litebriteBlue
@@ -603,6 +621,7 @@ hi link clojureMacro litebriteYellow
 hi link clojurePattern litebriteGreen
 hi link clojureQuote litebriteBoldRed
 hi link clojureRegexp litebriteRegexp
+" These groups are currently in development.
 hi link clojureRegexpBackRef litebriteRegexpBackRef
 hi link clojureRegexpBoundary litebriteRegexpBoundary
 hi link clojureRegexpCharClass Special
@@ -614,9 +633,9 @@ hi link clojureRegexpQuantifier litebriteRegexpQuantifier
 hi link clojureRegexpSpecialChar SpecialChar
 hi link clojureVariable litebriteBoldWhite
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Shell
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" shell {{{
+
 hi link shTestPattern litebriteGreen
 hi link shSubShRegion litebriteWhite
 hi link shRepeat litebriteRed
@@ -639,9 +658,9 @@ hi link shSetList Normal
 hi link shTestOpr Normal
 hi link shQuote String
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MySQL
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" mysql {{{
+
 hi link mysqlType litebriteFuchsia
 hi link mysqlSpecial litebriteOrange
 hi link mysqlOperator litebritePurple
@@ -649,33 +668,12 @@ hi link mysqlKeyword litebriteBlue
 hi link mysqlFunction litebriteRed
 hi link mysqlVariable litebriteYellow
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Make
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" make {{{
+
 hi link makeTarget litebriteFuchsia
 hi link makeIdent litebriteBoldWhite
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Lisp
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi link lispAtom litebriteWhite
-hi link lispAtomList litebriteWhite
-hi link lispAtomMark litebriteRed
-hi link lispDecl litebriteRed
-hi link lispEscapeSpecial litebriteBoldWhite
-hi link lispFunc litebriteBlue
-hi link lispKey litebriteFuchsia
+" }}}
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" twig
-" SEE: https://github.com/beyondwords/vim-twig
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi link twigBlockName litebriteBoldOrange
-hi link twigFilter litebriteGreen
-hi link twigNumber litebriteRed
-hi link twigSpecial litebriteYellow
-hi link twigStatement litebritePurple
-hi link twigTagBlock litebriteGrey13
-hi link twigTagDelim litebriteGrey13
-hi link twigVarBlock litebriteGrey13
-hi link twigVariable litebriteFuchsia
+" vim:foldmethod=marker
