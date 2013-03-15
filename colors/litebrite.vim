@@ -619,7 +619,9 @@ hi link clojureDispatch litebriteBoldRed
 hi link clojureKeyword litebriteFuchsia
 hi link clojureMacro litebriteYellow
 hi link clojurePattern litebriteGreen
+hi link clojureUnquote litebriteBoldRed
 hi link clojureQuote litebriteBoldRed
+hi link clojureMeta litebriteBoldRed
 hi link clojureRegexp litebriteRegexp
 " These groups are currently in development.
 hi link clojureRegexpBackRef litebriteRegexpBackRef
