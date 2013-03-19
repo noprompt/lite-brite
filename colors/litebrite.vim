@@ -164,12 +164,13 @@ exe "hi litebriteItalicGrey13" . s:GREY13 . s:ITALIC
 hi link litebriteEscapeChar litebriteBoldTeal
 hi link litebriteRegexp litebriteGreen
 hi link litebriteRegexpBackRef Special
-hi link litebriteRegexpBoundary litebriteYellow
+hi link litebriteRegexpBoundary litebriteBoldYellow
 hi link litebriteRegexpCharClass litebriteBlue
 hi link litebriteRegexpDelim litebriteBoldGreen
-hi link litebriteRegexpMod Special
 hi link litebriteRegexpQuantifier litebriteWhite
 hi link litebriteRegexpSep litebriteYellow
+hi link litebriteRegexpMod litebriteFuchsia
+hi link litebriteRegexpBracketExp String
 
 " }}}
 " Top level highlights {{{
@@ -624,12 +625,15 @@ hi link clojureQuote litebriteBoldRed
 hi link clojureMeta litebriteBoldRed
 hi link clojureRegexp litebriteRegexp
 " These groups are currently in development.
+hi link clojureRegexpEscape litebriteEscapeChar
 hi link clojureRegexpBackRef litebriteRegexpBackRef
 hi link clojureRegexpBoundary litebriteRegexpBoundary
 hi link clojureRegexpCharClass Special
 hi link clojureRegexpMod litebriteRegexpMod
 hi link clojureRegexpOr Conditional
-hi link clojureRegexpPosixCharClass litebriteRegexpCharClass
+hi link clojureRegexpPosixCharClass litebriteRegexpBracketExp
+hi link clojureRegexpUnicodeCharClass litebriteRegexpBracketExp
+hi link clojureRegexpJavaCharClass litebriteRegexpBracketExp
 hi link clojureRegexpPredefinedCharClass litebriteRegexpCharClass
 hi link clojureRegexpQuantifier litebriteRegexpQuantifier
 hi link clojureRegexpSpecialChar SpecialChar
