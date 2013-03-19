@@ -317,11 +317,13 @@ hi link rubyPseudoVariable litebriteWhite
 hi link rubyPseudoVariable litebriteYellow
 hi link rubyRailsUserClass Constant
 hi link rubyRegexp litebriteRegexp
+hi link rubyRegexpAnchor litebriteRegexpBoundary
+hi link rubyRegexpBrackets Special
+hi link rubyRegexpCharClass Special
 hi link rubyRegexpDelimiter litebriteRegexpDelim
-hi link rubyRegexpCharClass litebriteRegexpCharClass
-hi link rubyRegexpBrackets litebriteRegexpCharClass
-hi link rubyRegexpSpecial litebriteRegexpSep
-hi link rubyRegexpQuantifier litebriteWhite
+hi link rubyRegexpEscape litebriteEscapeChar
+hi link rubyRegexpQuantifier litebriteRegexpQuantifier
+hi link rubyRegexpSpecial litebriteRegexpMod
 hi link rubySharpBang Comment
 hi link rubyStringDelimiter String
 hi link rubyStringEscape litebriteEscapeChar
